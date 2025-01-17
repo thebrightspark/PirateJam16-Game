@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74hco"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nyjlq"]
-size = Vector2(20, 60)
+size = Vector2(20, 45)
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,7 +19,7 @@ position = Vector2(0, -45)
 script = ExtResource("2_4evqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/CharacterBody2D"]
-scale = Vector2(1, 2)
+scale = Vector2(1, 1.5)
 shape = SubResource("CapsuleShape2D_74hco")
 
 [node name="Sprite2D" type="Sprite2D" parent="TileMapLayer/CharacterBody2D"]
