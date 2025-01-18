@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3rfpyeibw7w2"]
+[gd_scene load_steps=7 format=3 uid="uid://b3rfpyeibw7w2"]
 
 [ext_resource type="Script" path="res://Overlay/overlay.gd" id="1_a2ovv"]
 [ext_resource type="LabelSettings" uid="uid://bfaraencvmagc" path="res://Overlay/overlay_label_settings.tres" id="2_qb3k6"]
 [ext_resource type="LabelSettings" uid="uid://dvu487aqvh00u" path="res://Overlay/overlay_health_label_settings.tres" id="3_e61ij"]
+[ext_resource type="Material" uid="uid://pais1s00m6mt" path="res://Assets/UI/InGame/HealthBar/HealthBar_Mat.tres" id="4_7y04t"]
 
 [sub_resource type="Gradient" id="Gradient_bd0xy"]
 interpolation_mode = 2
@@ -17,13 +18,25 @@ script = ExtResource("1_a2ovv")
 health_gradient = SubResource("GradientTexture1D_qmj6e")
 
 [node name="HealthLabel" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Health:"
 label_settings = ExtResource("2_qb3k6")
 
 [node name="HealthValueLabel" type="Label" parent="."]
+visible = false
 offset_left = 77.0
 offset_right = 147.0
 offset_bottom = 28.0
 label_settings = ExtResource("3_e61ij")
+
+[node name="HealthBar" type="ColorRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("4_7y04t")
+custom_minimum_size = Vector2(95, 24)
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 315.0
+offset_bottom = 102.0

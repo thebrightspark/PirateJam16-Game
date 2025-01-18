@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://pais1s00m6mt"]
+
+[ext_resource type="Shader" path="res://Assets/UI/InGame/HealthBar/HealthBar_Shader.gdshader" id="1_0g0bh"]
+[ext_resource type="Texture2D" uid="uid://cegnwgaikhhjj" path="res://Assets/UI/InGame/HealthBar/HealthBar_FillMask.png" id="2_fnvve"]
+[ext_resource type="Texture2D" uid="uid://bwf15wnerltt7" path="res://Assets/UI/InGame/HealthBar/HealthBar_Overlay.png" id="3_6g2m7"]
+
+[resource]
+shader = ExtResource("1_0g0bh")
+shader_parameter/pixel_size = 1
+shader_parameter/bg_color = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = 1.0
+shader_parameter/percentage = 1.0
+shader_parameter/speed = 0.35
+shader_parameter/wave_1_speed = -1.0
+shader_parameter/wave_2_speed = 1.0
+shader_parameter/wave_1_freq = 1.2
+shader_parameter/wave_2_freq = 1.0
+shader_parameter/wave_1_amp = 0.015
+shader_parameter/wave_2_amp = 0.01
+shader_parameter/sun_dir = Vector3(-0.2, 0.4, 1)
+shader_parameter/water_colour = Color(1, 0, 0, 1)
+shader_parameter/foam_colour = Color(1, 0.392157, 0.392157, 1)
+shader_parameter/sky_colour = Color(1, 0.690196, 0.694118, 1)
+shader_parameter/specular_colour = Color(1, 0.666667, 0.666667, 1)
+shader_parameter/health_bar_overlay = ExtResource("3_6g2m7")
+shader_parameter/health_bar_mask = ExtResource("2_fnvve")
