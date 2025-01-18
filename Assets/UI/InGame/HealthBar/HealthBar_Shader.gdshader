@@ -123,11 +123,11 @@ void fragment()
 	vec4 wave1 = wave(uv2, shadowWaveColor, percentage, wave_1_freq, wave_1_amp, 0.0, wave_1_speed);
 	vec4 wave2 = wave(uv2, fragColor, percentage, wave_2_freq, wave_2_amp, 0.7785*TIME, wave_2_speed);
 	vec4 combined_waves = mix(wave1, wave2, wave2.a);
-	vec4 health_bar = mix( bg_color, combined_waves, combined_waves.a );
+	vec4 health_bar = mix(bg_color, combined_waves, combined_waves.a);
 	health_bar.a = texture(health_bar_mask, UV).a;
 	
 	vec4 health_bar_border = texture(health_bar_overlay, UV);
-	COLOR = mix( health_bar_border, health_bar, health_bar.a);
+	COLOR = mix(health_bar_border, health_bar, health_bar.a);
 	//COLOR.a = texture(health_bar_mask, UV).a;
 	//COLOR = texture(health_bar_mask, UV);
 	//fragColor.a = step(UV.x, percentage);

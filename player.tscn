@@ -11,6 +11,7 @@ size = Vector2(20, 45)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -45)
 script = ExtResource("1_f71sg")
+HEALTH = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_74hco")

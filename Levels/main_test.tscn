@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=41 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_01.tres" id="1_ra72m"]
@@ -117,6 +117,7 @@ tile_map_data = PackedByteArray("AAD6/wAAAQABAAAAAAD7/wAAAQABAAAAAAD+/wAAAQABAAA
 tile_set = ExtResource("1_ra72m")
 
 [node name="BakedCollisions" type="StaticBody2D" parent="TileMapLayer"]
+visible = false
 script = ExtResource("1_05fr6")
 tilemaplayers_nodepaths = Array[NodePath]([NodePath("..")])
 
