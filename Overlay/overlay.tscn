@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3rfpyeibw7w2"]
+
+[ext_resource type="Script" path="res://Overlay/overlay.gd" id="1_a2ovv"]
+[ext_resource type="LabelSettings" uid="uid://bfaraencvmagc" path="res://Overlay/overlay_label_settings.tres" id="2_qb3k6"]
+[ext_resource type="LabelSettings" uid="uid://dvu487aqvh00u" path="res://Overlay/overlay_health_label_settings.tres" id="3_e61ij"]
+
+[sub_resource type="Gradient" id="Gradient_bd0xy"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.518987, 1)
+colors = PackedColorArray(0.741176, 0, 0, 1, 0.741176, 0.741176, 0, 1, 0, 0.741176, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qmj6e"]
+gradient = SubResource("Gradient_bd0xy")
+
+[node name="Overlay" type="CanvasLayer"]
+script = ExtResource("1_a2ovv")
+health_gradient = SubResource("GradientTexture1D_qmj6e")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Health:"
+label_settings = ExtResource("2_qb3k6")
+
+[node name="HealthValueLabel" type="Label" parent="."]
+offset_left = 77.0
+offset_right = 147.0
+offset_bottom = 28.0
+label_settings = ExtResource("3_e61ij")
