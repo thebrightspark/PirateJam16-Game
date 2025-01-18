@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cucufcbiws0qs"]
+[gd_scene load_steps=5 format=3 uid="uid://cucufcbiws0qs"]
 
 [ext_resource type="Script" path="res://Projectile/projectile.gd" id="1_yu4pw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_seuf6"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tr85s"]
 radius = 5.0
@@ -12,6 +16,7 @@ size = Vector2(10, 10)
 collision_layer = 8
 collision_mask = 18
 mass = 0.005
+physics_material_override = SubResource("PhysicsMaterial_seuf6")
 can_sleep = false
 custom_integrator = true
 script = ExtResource("1_yu4pw")
