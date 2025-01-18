@@ -1,113 +1,113 @@
-[gd_scene load_steps=41 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=40 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_01.tres" id="1_ra72m"]
 [ext_resource type="PackedScene" uid="uid://b2f3nfgx1dfb8" path="res://player.tscn" id="3_c0c7p"]
 [ext_resource type="PackedScene" uid="uid://b3rfpyeibw7w2" path="res://Overlay/overlay.tscn" id="4_kbfsw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_12780"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb15w"]
 size = Vector2(120, 192)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_48q17"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pcgc"]
 size = Vector2(144, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4nr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm853"]
 size = Vector2(168, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ea3q"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmawt"]
 size = Vector2(168, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctf7f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6e60u"]
 size = Vector2(192, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqqrr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8lw3"]
 size = Vector2(216, 72)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8255d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egpo6"]
 size = Vector2(360, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_js5bj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ortc1"]
 size = Vector2(408, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ihk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1gsm"]
 size = Vector2(456, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vb0i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnrk6"]
 size = Vector2(480, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa4nt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4tmk"]
 size = Vector2(504, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqnm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ay6v4"]
 size = Vector2(552, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r2qh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_511ye"]
 size = Vector2(312, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_liy1e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycn7k"]
 size = Vector2(624, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_topfj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5x3p"]
 size = Vector2(144, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e22ax"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oqyd"]
 size = Vector2(216, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4thaf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4og6"]
 size = Vector2(1056, 120)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_os65a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmk7l"]
 size = Vector2(192, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_80fjq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8wix"]
 size = Vector2(1056, 120)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7m5i6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igg8o"]
 size = Vector2(168, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbvgk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at4lq"]
 size = Vector2(48, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2twxx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv6wi"]
 size = Vector2(72, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sl3d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuomk"]
 size = Vector2(120, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwl3k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44uil"]
 size = Vector2(120, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i66nj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wulb"]
 size = Vector2(360, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7dqs"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmi1e"]
 size = Vector2(360, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5wcc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a5jn"]
 size = Vector2(360, 72)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t1yk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac6sr"]
 size = Vector2(312, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_isjfl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwml3"]
 size = Vector2(288, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj86f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sddm"]
 size = Vector2(192, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ag2y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l76db"]
 size = Vector2(192, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8huap"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unkar"]
 size = Vector2(192, 120)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf26c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqdbd"]
 size = Vector2(168, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlhm3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnmsm"]
 size = Vector2(168, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hyl2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cek8c"]
 size = Vector2(144, 72)
 
 [node name="Node2D" type="Node2D"]
@@ -118,151 +118,152 @@ tile_set = ExtResource("1_ra72m")
 
 [node name="BakedCollisions" type="StaticBody2D" parent="TileMapLayer"]
 visible = false
+collision_layer = 2
+collision_mask = 57
 script = ExtResource("1_05fr6")
 tilemaplayers_nodepaths = Array[NodePath]([NodePath("..")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-540, 0)
-shape = SubResource("RectangleShape2D_12780")
+shape = SubResource("RectangleShape2D_yb15w")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-528, 108)
-shape = SubResource("RectangleShape2D_48q17")
+shape = SubResource("RectangleShape2D_0pcgc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-516, -216)
-shape = SubResource("RectangleShape2D_fs4nr")
+shape = SubResource("RectangleShape2D_dm853")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-516, 144)
-shape = SubResource("RectangleShape2D_1ea3q")
+shape = SubResource("RectangleShape2D_wmawt")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-504, -276)
-shape = SubResource("RectangleShape2D_ctf7f")
+shape = SubResource("RectangleShape2D_6e60u")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-492, -324)
-shape = SubResource("RectangleShape2D_qqqrr")
+shape = SubResource("RectangleShape2D_i8lw3")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-420, -372)
-shape = SubResource("RectangleShape2D_8255d")
+shape = SubResource("RectangleShape2D_egpo6")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-396, -396)
-shape = SubResource("RectangleShape2D_js5bj")
+shape = SubResource("RectangleShape2D_ortc1")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-372, -108)
-shape = SubResource("RectangleShape2D_h7ihk")
+shape = SubResource("RectangleShape2D_e1gsm")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-360, -132)
-shape = SubResource("RectangleShape2D_8vb0i")
+shape = SubResource("RectangleShape2D_fnrk6")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-348, -156)
-shape = SubResource("RectangleShape2D_sa4nt")
+shape = SubResource("RectangleShape2D_j4tmk")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-324, -420)
-shape = SubResource("RectangleShape2D_vcqnm")
+shape = SubResource("RectangleShape2D_ay6v4")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-300, -12)
-shape = SubResource("RectangleShape2D_6r2qh")
+shape = SubResource("RectangleShape2D_511ye")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-144, 24)
-shape = SubResource("RectangleShape2D_liy1e")
+shape = SubResource("RectangleShape2D_ycn7k")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-120, -180)
-shape = SubResource("RectangleShape2D_topfj")
+shape = SubResource("RectangleShape2D_c5x3p")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-84, -216)
-shape = SubResource("RectangleShape2D_e22ax")
+shape = SubResource("RectangleShape2D_7oqyd")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-72, -492)
-shape = SubResource("RectangleShape2D_4thaf")
+shape = SubResource("RectangleShape2D_n4og6")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-72, -252)
-shape = SubResource("RectangleShape2D_os65a")
+shape = SubResource("RectangleShape2D_cmk7l")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-72, 228)
-shape = SubResource("RectangleShape2D_80fjq")
+shape = SubResource("RectangleShape2D_a8wix")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(-60, -276)
-shape = SubResource("RectangleShape2D_7m5i6")
+shape = SubResource("RectangleShape2D_igg8o")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(120, -108)
-shape = SubResource("RectangleShape2D_fbvgk")
+shape = SubResource("RectangleShape2D_at4lq")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(132, 72)
-shape = SubResource("RectangleShape2D_2twxx")
+shape = SubResource("RectangleShape2D_pv6wi")
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(156, -252)
-shape = SubResource("RectangleShape2D_8sl3d")
+shape = SubResource("RectangleShape2D_kuomk")
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(156, -84)
-shape = SubResource("RectangleShape2D_pwl3k")
+shape = SubResource("RectangleShape2D_44uil")
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(276, -420)
-shape = SubResource("RectangleShape2D_i66nj")
+shape = SubResource("RectangleShape2D_6wulb")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(276, -276)
-shape = SubResource("RectangleShape2D_o7dqs")
+shape = SubResource("RectangleShape2D_qmi1e")
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(276, 132)
-shape = SubResource("RectangleShape2D_a5wcc")
+shape = SubResource("RectangleShape2D_2a5jn")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(300, -396)
-shape = SubResource("RectangleShape2D_2t1yk")
+shape = SubResource("RectangleShape2D_ac6sr")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(312, -372)
-shape = SubResource("RectangleShape2D_isjfl")
+shape = SubResource("RectangleShape2D_cwml3")
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(360, -348)
-shape = SubResource("RectangleShape2D_fj86f")
+shape = SubResource("RectangleShape2D_6sddm")
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(360, -216)
-shape = SubResource("RectangleShape2D_8ag2y")
+shape = SubResource("RectangleShape2D_l76db")
 
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(360, 36)
-shape = SubResource("RectangleShape2D_8huap")
+shape = SubResource("RectangleShape2D_unkar")
 
 [node name="CollisionShape2D33" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(372, -156)
-shape = SubResource("RectangleShape2D_nf26c")
+shape = SubResource("RectangleShape2D_jqdbd")
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(372, -48)
-shape = SubResource("RectangleShape2D_hlhm3")
+shape = SubResource("RectangleShape2D_cnmsm")
 
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="TileMapLayer/BakedCollisions"]
 position = Vector2(384, -108)
-shape = SubResource("RectangleShape2D_4hyl2")
+shape = SubResource("RectangleShape2D_cek8c")
 
 [node name="Player" parent="." instance=ExtResource("3_c0c7p")]
-floor_constant_speed = true
 
 [node name="Overlay" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kbfsw")]
 player = NodePath("../Player")

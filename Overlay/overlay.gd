@@ -17,11 +17,11 @@ func _process(_delta: float) -> void:
 	update_health()
 
 func update_health() -> void:
-	var health = player.HEALTH
+	var health = player.health
 	if health == last_health:
 		return
 	last_health = health
-	var healthPercentage: float = float(health) / float(player.MAX_HEALTH)
+	var healthPercentage: float = float(health) / float(player.max_health)
 	print("health: ", healthPercentage)
 	
 	if health_label.visible:
