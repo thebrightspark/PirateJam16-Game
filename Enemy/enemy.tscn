@@ -3,20 +3,17 @@
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_1b5mc"]
 [ext_resource type="Texture2D" uid="uid://by7wlwiqpusal" path="res://Assets/enemy_temp.png" id="1_lt2at"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_522um"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aaa47"]
 radius = 8.0
 height = 20.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_522um"]
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(150, -40)
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_1b5mc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_aaa47")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1.5)
@@ -31,3 +28,6 @@ offset_bottom = 3.0
 scale = Vector2(0.5, 0.5)
 label_settings = SubResource("LabelSettings_522um")
 horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_aaa47")
