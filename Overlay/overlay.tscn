@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3rfpyeibw7w2"]
+[gd_scene load_steps=8 format=3 uid="uid://b3rfpyeibw7w2"]
 
 [ext_resource type="Script" path="res://Overlay/overlay.gd" id="1_a2ovv"]
 [ext_resource type="LabelSettings" uid="uid://dvu487aqvh00u" path="res://Overlay/overlay_health_label_settings.tres" id="3_e61ij"]
 [ext_resource type="Material" uid="uid://pais1s00m6mt" path="res://Assets/UI/InGame/HealthBar/HealthBar_Mat.tres" id="4_7y04t"]
+[ext_resource type="LabelSettings" uid="uid://bfaraencvmagc" path="res://Overlay/overlay_label_settings.tres" id="4_egu8o"]
 
 [sub_resource type="Gradient" id="Gradient_bd0xy"]
 interpolation_mode = 2
@@ -11,6 +12,12 @@ colors = PackedColorArray(0.741176, 0, 0, 1, 0.741176, 0.741176, 0, 1, 0, 0.7411
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_qmj6e"]
 gradient = SubResource("Gradient_bd0xy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_83t4i"]
+font_size = 20
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.5, 1.5)
 
 [node name="Overlay" type="CanvasLayer"]
 script = ExtResource("1_a2ovv")
@@ -32,3 +39,18 @@ offset_top = 55.0
 offset_right = 378.0
 offset_bottom = 83.0
 label_settings = ExtResource("3_e61ij")
+
+[node name="VelLabel" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 110.0
+offset_right = 52.0
+offset_bottom = 138.0
+text = "Vel:"
+label_settings = ExtResource("4_egu8o")
+
+[node name="VelValueLabel" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 110.0
+offset_right = 122.0
+offset_bottom = 138.0
+label_settings = SubResource("LabelSettings_83t4i")

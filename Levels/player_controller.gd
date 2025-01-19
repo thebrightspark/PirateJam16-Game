@@ -5,6 +5,11 @@ extends CharacterBody2D
 @export var speed = 150.0
 @export var jump_speed = 400.0
 
+@export_group("Levitate")
+@export var levitate_max_speed = 200.0
+@export var levitate_acceleration = 2000.0
+@export var levitate_amount_max = 1.0
+
 @export_group("Attack")
 @export var cooldown_millis = 500
 @export var spread_deg = 0
@@ -13,6 +18,9 @@ extends CharacterBody2D
 
 var projectile_scene: PackedScene = preload("res://Projectile/projectile.tscn")
 var last_attack_timestamp = 0.0
+
+var levitating = false
+var levitate_amount = 0.0
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
@@ -23,9 +31,25 @@ func handle_movement(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if is_on_floor():
+		levitating = false
+		levitate_amount = 0.0
+
 	# Handle jump
-	if Input.is_action_pressed("Jump") and is_on_floor():
-		velocity.y = -jump_speed
+	if Input.is_action_pressed("Jump"):
+		if is_on_floor():
+			velocity.y = -jump_speed
+		else:
+			# Handle levitation
+			if not levitating and levitate_amount < levitate_amount_max and velocity.y < levitate_max_speed:
+				levitating = true
+			if levitating:
+				if velocity.y > -levitate_max_speed:
+					velocity.y = maxf(-levitate_max_speed, velocity.y - (levitate_acceleration * delta))
+					levitate_amount += delta
+				print(levitate_amount)
+				if levitate_amount >= levitate_amount_max:
+					levitating = false
 
 	# Handle horizontal movement
 	if Input.is_action_pressed("Left"):

@@ -6,15 +6,18 @@ extends CanvasLayer
 
 var health_label: Label
 var health_bar: ColorRect
+var velocity_label: Label
 
 var last_health = 0
 
 func _ready() -> void:
 	health_label = get_node("HealthValueLabel")
 	health_bar = get_node("HealthBar")
+	velocity_label = get_node("VelValueLabel")
 
 func _process(_delta: float) -> void:
 	update_health()
+	update_veloctiy()
 
 func update_health() -> void:
 	var health = player.health
@@ -29,6 +32,10 @@ func update_health() -> void:
 	
 	if health_bar.visible:
 		(health_bar.material as ShaderMaterial).set_shader_parameter("percentage", healthPercentage)
+
+func update_veloctiy() -> void:
+	if velocity_label.visible:
+		velocity_label.text = str(player.velocity.y)
 
 func get_health_color(healthPercentage) -> Color:
 	var width = health_gradient.get_width() - 1
