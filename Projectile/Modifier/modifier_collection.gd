@@ -21,7 +21,7 @@ func create_projectile_attributes() -> ProjectileAttributes:
 	attributes.pierce = pierce
 	return attributes
 
-func set_modifiers(modifiers: Array[BaseModifier]) -> void:
+func set_modifiers(new_modifiers: Array[BaseModifier]) -> void:
 	bandwidth = 0
 	bounce = 0
 	cooldown = 0
@@ -31,7 +31,7 @@ func set_modifiers(modifiers: Array[BaseModifier]) -> void:
 	lifesteal = 0
 	multishot = 0
 	pierce = 0
-	for modifier in modifiers:
+	for modifier in new_modifiers:
 		if modifier is BaseModifier:
 			bandwidth += modifier.bandwidth
 			add_modifier(modifier)

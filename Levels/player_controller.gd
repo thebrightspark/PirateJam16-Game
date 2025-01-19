@@ -58,7 +58,6 @@ func handle_movement(delta: float) -> void:
 				if velocity.y > -levitate_max_speed:
 					velocity.y = maxf(-levitate_max_speed, velocity.y - (levitate_acceleration * delta))
 					levitate_amount += delta
-				print(levitate_amount)
 				if levitate_amount >= levitate_amount_max:
 					levitating = false
 
