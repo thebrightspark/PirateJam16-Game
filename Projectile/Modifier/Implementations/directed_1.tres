@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HomingModifier" load_steps=2 format=3 uid="uid://gw0cgknbea1d"]
+
+[ext_resource type="Script" path="res://Projectile/Modifier/Base/homing_modifier.gd" id="1_mulqg"]
+
+[resource]
+script = ExtResource("1_mulqg")
+homing = true
+bandwidth = 20

@@ -1,14 +1,7 @@
 extends RigidBody2D
 
-@export var damage = 2
-@export var lifetime = 5
-@export var speed = 200
-@export var drag = 1.0 # FIXME: Can't get forces to apply :(
-@export var gravity = 0.0
-@export var bounce = 0
-@export var pierce = 0
-@export var homing = false
-@export var homing_range = 20
+@export var base_damage: int = 1
+@export var attributes: ProjectileAttributes = ProjectileAttributes.new()
 
 const COLLISION_LAYER_ENVIRONMENT = 2
 const COLLISION_LAYER_ENEMY = 5
@@ -19,7 +12,7 @@ var bounces = 0
 var pierced = 0
 
 func _ready() -> void:
-	apply_central_impulse(Vector2(0, -speed).rotated(global_rotation).rotated(deg_to_rad(90)))
+	apply_central_impulse(Vector2(0, -attributes.speed).rotated(global_rotation).rotated(deg_to_rad(90)))
 
 func _process(delta: float) -> void:
 	handle_age(delta)
@@ -28,11 +21,11 @@ func _physics_process(_delta: float) -> void:
 	look_at(global_position + linear_velocity)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	if drag > 0.0:
-		var drag_force = -state.linear_velocity.normalized() * drag
+	if attributes.drag > 0.0:
+		var drag_force = -state.linear_velocity.normalized() * attributes.drag
 		state.apply_central_force(drag_force)
-	if gravity > 0.0:
-		state.apply_central_force(get_gravity() * gravity)
+	if attributes.gravity > 0.0:
+		state.apply_central_force(get_gravity() * attributes.gravity)
 
 func _on_environment_entered(body: Node) -> void:
 	handle_bounce(body)
@@ -48,14 +41,14 @@ func is_in_collision_layer(body: Node, layer: int) -> bool:
 
 func handle_age(delta: float) -> void:
 	age += 1.0 * delta
-	if age >= lifetime:
+	if age >= attributes.lifetime:
 		queue_free()
 
-func handle_enemy_hit(body: Node) -> void:
+func handle_enemy_hit(body: Node2D) -> void:
 	if is_in_collision_layer(body, COLLISION_LAYER_ENEMY) && body.has_method("on_damage"):
-		body.on_damage(damage)
+		body.on_damage(base_damage + attributes.damage)
 		pierced += 1
-		if pierced > pierce:
+		if pierced > attributes.pierce:
 			queue_free()
 		else:
 			add_collision_exception_with(body)
@@ -63,5 +56,5 @@ func handle_enemy_hit(body: Node) -> void:
 func handle_bounce(body: Node) -> void:
 	if is_in_collision_layer(body, COLLISION_LAYER_ENVIRONMENT):
 		bounces += 1
-		if bounces > bounce:
+		if bounces > attributes.bounce:
 			queue_free()

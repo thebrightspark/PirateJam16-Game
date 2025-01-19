@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var health = 100
 @export var speed = 150.0
 @export var jump_speed = 400.0
+@export var modifiers: ModifierCollection
 
 @export_group("Levitate")
 @export var levitate_max_speed = 200.0
@@ -13,18 +14,28 @@ extends CharacterBody2D
 @export_group("Attack")
 @export var cooldown_millis = 500
 @export var spread_deg = 0
-@export var multishot = 1
 @export var multishot_spread_deg = 5
 
 var projectile_scene: PackedScene = preload("res://Projectile/projectile.tscn")
+var modifier_collection: ModifierCollection
 var last_attack_timestamp = 0.0
 
 var levitating = false
 var levitate_amount = 0.0
 
+func _ready() -> void:
+	if not modifiers.modifiers.is_empty():
+		modifiers.set_modifiers(modifiers.modifiers.duplicate())
+
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_attacking()
+
+func add_modifier(modifier: BaseModifier) -> void:
+	modifiers.add_modifier(modifier)
+
+func remove_modifier(index: int) -> void:
+	modifiers.remove_modifier(index)
 
 func handle_movement(delta: float) -> void:
 	# Add the gravity
@@ -68,6 +79,7 @@ func handle_attacking() -> void:
 		last_attack_timestamp = time
 		var mouse_pos = get_global_mouse_position()
 		var look_vec = (mouse_pos - self.global_position).normalized()
+		var multishot = modifiers.multishot + 1
 		var multishot_rotation_max = -((multishot - 1) * multishot_spread_deg)
 		multishot_rotation_max /= 2
 		for m in multishot:
@@ -80,6 +92,7 @@ func handle_attacking() -> void:
 			add_sibling(instance)
 
 func apply_projectile_modifiers(projectile: Node2D) -> void:
+	projectile.attributes = modifiers.create_projectile_attributes()
 	if spread_deg > 0:
 		var rotation_offset = (randf() * spread_deg) - (spread_deg / 2.0)
 		projectile.rotate(deg_to_rad(rotation_offset))

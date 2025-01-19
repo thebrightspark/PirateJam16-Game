@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProjectileAttributes" load_steps=2 format=3 uid="uid://b1eji52gl5ih7"]
+
+[ext_resource type="Script" path="res://Projectile/projectile_attributes.gd" id="1_i22hf"]
+
+[resource]
+script = ExtResource("1_i22hf")
+damage = 2
+lifetime = 5
+speed = 200
+drag = 1.0
+gravity = 0.0
+knockback = 0.0
+aoe_range = 0.0
+bounce = 0
+pierce = 0
+homing = false
+homing_range = 20

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PierceModifier" load_steps=2 format=3 uid="uid://dsmr0pmeysuvt"]
+
+[ext_resource type="Script" path="res://Projectile/Modifier/Base/pierce_modifier.gd" id="1_ucpg5"]
+
+[resource]
+script = ExtResource("1_ucpg5")
+pierce = 3
+bandwidth = 20

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MultishotModifier" load_steps=2 format=3 uid="uid://dxtweujkv6o3a"]
+
+[ext_resource type="Script" path="res://Projectile/Modifier/Base/multishot_modifier.gd" id="1_1lfup"]
+
+[resource]
+script = ExtResource("1_1lfup")
+multishot = 3
+bandwidth = 15

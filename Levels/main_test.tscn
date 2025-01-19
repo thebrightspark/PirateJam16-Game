@@ -1,10 +1,16 @@
-[gd_scene load_steps=41 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=49 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_01.tres" id="1_ra72m"]
 [ext_resource type="PackedScene" uid="uid://b2f3nfgx1dfb8" path="res://player.tscn" id="3_c0c7p"]
+[ext_resource type="Script" path="res://Projectile/Modifier/Base/base_modifier.gd" id="4_2npqh"]
 [ext_resource type="PackedScene" uid="uid://b3rfpyeibw7w2" path="res://Overlay/overlay.tscn" id="4_kbfsw"]
 [ext_resource type="PackedScene" uid="uid://co3v7a0fdjcbk" path="res://Enemy/enemy.tscn" id="5_3ixp8"]
+[ext_resource type="Resource" uid="uid://bce7teena5aji" path="res://Projectile/Modifier/Implementations/persistence_1.tres" id="5_aaeu8"]
+[ext_resource type="Resource" uid="uid://do3crs4subtlp" path="res://Projectile/Modifier/Implementations/rebound_1.tres" id="6_ojih7"]
+[ext_resource type="Script" path="res://Projectile/Modifier/modifier_collection.gd" id="6_roxwm"]
+[ext_resource type="Resource" uid="uid://djlbkibbbr6rn" path="res://Projectile/Modifier/Implementations/spread_2.tres" id="7_d0icn"]
+[ext_resource type="Script" path="res://Projectile/Modifier/Base/damage_modifier.gd" id="8_ulidp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb15w"]
 size = Vector2(120, 192)
@@ -110,6 +116,15 @@ size = Vector2(168, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cek8c"]
 size = Vector2(144, 72)
+
+[sub_resource type="Resource" id="Resource_4d7q6"]
+script = ExtResource("8_ulidp")
+damage = 2.0
+bandwidth = 10
+
+[sub_resource type="Resource" id="Resource_ba3p7"]
+script = ExtResource("6_roxwm")
+modifiers = Array[ExtResource("4_2npqh")]([ExtResource("5_aaeu8"), ExtResource("6_ojih7"), ExtResource("7_d0icn"), SubResource("Resource_4d7q6")])
 
 [node name="Node2D" type="Node2D"]
 
@@ -265,6 +280,7 @@ position = Vector2(384, -108)
 shape = SubResource("RectangleShape2D_cek8c")
 
 [node name="Player" parent="." instance=ExtResource("3_c0c7p")]
+modifiers = SubResource("Resource_ba3p7")
 
 [node name="Overlay" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kbfsw")]
 player = NodePath("../Player")

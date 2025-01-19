@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HealthModifier" load_steps=2 format=3 uid="uid://dvibbq2twf5vd"]
+
+[ext_resource type="Script" path="res://Projectile/Modifier/Base/health_modifier.gd" id="1_1dbmg"]
+
+[resource]
+script = ExtResource("1_1dbmg")
+health = 40
+bandwidth = 20
