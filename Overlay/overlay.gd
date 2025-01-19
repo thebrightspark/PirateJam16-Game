@@ -22,7 +22,6 @@ func update_health() -> void:
 		return
 	last_health = health
 	var healthPercentage: float = float(health) / float(player.max_health)
-	print("health: ", healthPercentage)
 	
 	if health_label.visible:
 		health_label.text = str(health)

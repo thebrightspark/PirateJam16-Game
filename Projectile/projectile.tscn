@@ -19,6 +19,8 @@ mass = 0.005
 physics_material_override = SubResource("PhysicsMaterial_seuf6")
 can_sleep = false
 custom_integrator = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_yu4pw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,3 +28,5 @@ shape = SubResource("CircleShape2D_tr85s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_1bwpk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
