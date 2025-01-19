@@ -30,8 +30,8 @@ material = ExtResource("4_7y04t")
 custom_minimum_size = Vector2(95, 24)
 offset_left = 30.0
 offset_top = 30.0
-offset_right = 315.0
-offset_bottom = 102.0
+offset_right = 125.0
+offset_bottom = 54.0
 
 [node name="HealthValueLabel" type="Label" parent="."]
 offset_left = 308.0

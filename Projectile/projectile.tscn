@@ -1,14 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://cucufcbiws0qs"]
+[gd_scene load_steps=12 format=3 uid="uid://cucufcbiws0qs"]
 
 [ext_resource type="Script" path="res://Projectile/projectile.gd" id="1_yu4pw"]
 [ext_resource type="Shape2D" uid="uid://sr76khwufdb" path="res://Projectile/projectile_shape.tres" id="2_b2uv2"]
+[ext_resource type="Texture2D" uid="uid://xon372yoqj0w" path="res://Assets/Sprites/Spells/Force-Spritesheet.png" id="3_6mkku"]
+[ext_resource type="Material" uid="uid://c4baqu5eacs5m" path="res://Assets/Sprites/Spells/ForceSpellParticles.tres" id="4_ttpli"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kjpsb"]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bwpk"]
-size = Vector2(10, 10)
+[sub_resource type="Gradient" id="Gradient_wwa8p"]
+offsets = PackedFloat32Array(0, 0.705729)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3432j"]
+gradient = SubResource("Gradient_wwa8p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbl02"]
+atlas = ExtResource("3_6mkku")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w7h8"]
+atlas = ExtResource("3_6mkku")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ahkq"]
+atlas = ExtResource("3_6mkku")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s2ro2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbl02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ahkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7h8")
+}],
+"loop": true,
+"name": &"Force",
+"speed": 10.0
+}]
 
 [node name="Projectile" type="RigidBody2D"]
 collision_layer = 0
@@ -21,8 +61,20 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_yu4pw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_1bwpk")
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 75
+process_material = ExtResource("4_ttpli")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0, 0, 1)
+texture = SubResource("GradientTexture2D_3432j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_s2ro2")
+animation = &"Force"
+autoplay = "Force"
 
 [node name="EnvironmentCollider" type="CollisionShape2D" parent="."]
 shape = ExtResource("2_b2uv2")
