@@ -270,9 +270,3 @@ shape = SubResource("RectangleShape2D_cek8c")
 player = NodePath("../Player")
 
 [node name="Enemy" parent="." instance=ExtResource("5_3ixp8")]
-
-[node name="Enemy2" parent="." instance=ExtResource("5_3ixp8")]
-position = Vector2(132, -40)
-
-[node name="Enemy3" parent="." instance=ExtResource("5_3ixp8")]
-position = Vector2(114, -40)
