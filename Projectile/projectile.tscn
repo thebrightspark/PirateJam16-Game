@@ -15,7 +15,7 @@ size = Vector2(10, 10)
 [node name="Projectile" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 18
-mass = 0.005
+mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_seuf6")
 can_sleep = false
 custom_integrator = true

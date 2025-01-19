@@ -11,7 +11,7 @@ extends CharacterBody2D
 @export var multishot = 1
 @export var multishot_spread_deg = 5
 
-var projectile: PackedScene = preload("res://Projectile/projectile.tscn")
+var projectile_scene: PackedScene = preload("res://Projectile/projectile.tscn")
 var last_attack_timestamp = 0.0
 
 func _physics_process(delta: float) -> void:
@@ -47,7 +47,7 @@ func handle_attacking() -> void:
 		var multishot_rotation_max = -((multishot - 1) * multishot_spread_deg)
 		multishot_rotation_max /= 2
 		for m in multishot:
-			var instance: Node2D = projectile.instantiate()
+			var instance: Node2D = projectile_scene.instantiate()
 			instance.global_position = self.global_position + (look_vec * 15)
 			instance.look_at(mouse_pos)
 			var multishot_rotation = multishot_rotation_max + (m * multishot_spread_deg)
