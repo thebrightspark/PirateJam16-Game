@@ -290,13 +290,14 @@ shape = SubResource("RectangleShape2D_cek8c")
 position = Vector2(-456, -73)
 
 [node name="Player" parent="." instance=ExtResource("3_c0c7p")]
+position = Vector2(0, -65)
 modifiers = SubResource("Resource_ba3p7")
 
 [node name="Overlay" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kbfsw")]
-visible = false
 player = NodePath("../Player")
 
 [node name="Enemy" parent="." instance=ExtResource("5_3ixp8")]
+position = Vector2(150, -40)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_3ixp8")]
 position = Vector2(132, -40)
