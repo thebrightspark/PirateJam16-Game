@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BounceModifier" load_steps=2 format=3 uid="uid://do3crs4subtlp"]
 
-[ext_resource type="Script" path="res://Projectile/Modifier/Base/bounce_modifier.gd" id="1_ii4sx"]
+[ext_resource type="Script" path="res://Modifier/Base/bounce_modifier.gd" id="1_ii4sx"]
 
 [resource]
 script = ExtResource("1_ii4sx")

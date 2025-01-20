@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PierceModifier" load_steps=2 format=3 uid="uid://cif11rytb2o23"]
 
-[ext_resource type="Script" path="res://Projectile/Modifier/Base/pierce_modifier.gd" id="1_fk6rj"]
+[ext_resource type="Script" path="res://Modifier/Base/pierce_modifier.gd" id="1_fk6rj"]
 
 [resource]
 script = ExtResource("1_fk6rj")

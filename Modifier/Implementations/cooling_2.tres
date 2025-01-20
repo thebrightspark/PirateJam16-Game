@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CooldownModifier" load_steps=2 format=3 uid="uid://bsqcg7nx5um02"]
 
-[ext_resource type="Script" path="res://Projectile/Modifier/Base/cooldown_modifier.gd" id="1_i5bpg"]
+[ext_resource type="Script" path="res://Modifier/Base/cooldown_modifier.gd" id="1_i5bpg"]
 
 [resource]
 script = ExtResource("1_i5bpg")

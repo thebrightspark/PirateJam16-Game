@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LifestealModifier" load_steps=2 format=3 uid="uid://dwudq216cn1ni"]
 
-[ext_resource type="Script" path="res://Projectile/Modifier/Base/lifesteal_modifier.gd" id="1_hgpxs"]
+[ext_resource type="Script" path="res://Modifier/Base/lifesteal_modifier.gd" id="1_hgpxs"]
 
 [resource]
 script = ExtResource("1_hgpxs")

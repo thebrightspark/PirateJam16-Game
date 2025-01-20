@@ -84,7 +84,7 @@ shape = ExtResource("2_b2uv2")
 collision_layer = 8
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="EnemyCollider" type="CollisionShape2D" parent="Area2D"]
 shape = ExtResource("2_b2uv2")
 
 [connection signal="body_entered" from="." to="." method="_on_environment_entered"]

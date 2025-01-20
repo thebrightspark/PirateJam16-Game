@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="HealthModifier" load_steps=2 format=3 uid="uid://cnorc7qrnlb3q"]
 
-[ext_resource type="Script" path="res://Projectile/Modifier/Base/health_modifier.gd" id="1_gk0he"]
+[ext_resource type="Script" path="res://Modifier/Base/health_modifier.gd" id="1_gk0he"]
 
 [resource]
 script = ExtResource("1_gk0he")

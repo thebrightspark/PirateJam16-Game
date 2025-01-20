@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://duh72ea540n4b"]
+
+[ext_resource type="Script" path="res://Item/item_pickup.gd" id="1_jjnwe"]
+[ext_resource type="Shape2D" uid="uid://ky1io670rqfu" path="res://Item/item_pickup_shape.tres" id="1_ot5or"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oo47v"]
+bounce = 0.5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g7axg"]
+size = Vector2(12, 12)
+
+[node name="ItemPickup" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_oo47v")
+lock_rotation = true
+script = ExtResource("1_jjnwe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_g7axg")
+
+[node name="EnvironmentCollider" type="CollisionShape2D" parent="."]
+shape = ExtResource("1_ot5or")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="Area2D"]
+shape = ExtResource("1_ot5or")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]

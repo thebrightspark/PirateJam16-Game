@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/player_controller.gd" id="1_f71sg"]
 [ext_resource type="Texture2D" uid="uid://bamis27fp54qc" path="res://Assets/player_temp.png" id="2_ykx7v"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74hco"]
-height = 45.0
+[ext_resource type="Shape2D" uid="uid://cvkdexjtfy1uh" path="res://Player/player_shape.tres" id="3_1shau"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 50
@@ -16,9 +14,15 @@ scale = Vector2(0.078, 0.078)
 texture = ExtResource("2_ykx7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_74hco")
+shape = ExtResource("3_1shau")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 64
+
+[node name="ItemPickupCollider" type="CollisionShape2D" parent="Area2D"]
+shape = ExtResource("3_1shau")

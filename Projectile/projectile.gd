@@ -36,16 +36,13 @@ func _on_enemy_entered(body: Node2D) -> void:
 func _on_enemy_exited(body: Node2D) -> void:
 	remove_collision_exception_with(body)
 
-func is_in_collision_layer(body: Node, layer: int) -> bool:
-	return body is CollisionObject2D and (body as CollisionObject2D).get_collision_layer_value(layer)
-
 func handle_age(delta: float) -> void:
 	age += 1.0 * delta
 	if age >= attributes.lifetime:
 		queue_free()
 
 func handle_enemy_hit(body: Node2D) -> void:
-	if is_in_collision_layer(body, COLLISION_LAYER_ENEMY) && body.has_method("on_damage"):
+	if Util.is_in_collision_layer(body, "Enemies") && body.has_method("on_damage"):
 		body.on_damage(base_damage + attributes.damage)
 		pierced += 1
 		if pierced > attributes.pierce:
@@ -54,7 +51,7 @@ func handle_enemy_hit(body: Node2D) -> void:
 			add_collision_exception_with(body)
 
 func handle_bounce(body: Node) -> void:
-	if is_in_collision_layer(body, COLLISION_LAYER_ENVIRONMENT):
+	if Util.is_in_collision_layer(body, "Environment"):
 		bounces += 1
 		if bounces > attributes.bounce:
 			queue_free()
