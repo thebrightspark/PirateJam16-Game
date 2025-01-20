@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=48 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_01.tres" id="1_ra72m"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://beeh6hlg8vn32" path="res://Projectile/Modifier/Implementations/rebound_3.tres" id="6_wrxrd"]
 [ext_resource type="Resource" uid="uid://djlbkibbbr6rn" path="res://Projectile/Modifier/Implementations/spread_2.tres" id="7_d0icn"]
 [ext_resource type="Resource" uid="uid://2tu6sh24sa6u" path="res://Projectile/Modifier/Implementations/cooling_3.tres" id="7_daxuq"]
+[ext_resource type="PackedScene" uid="uid://cu1gxmt8xllhi" path="res://Assets/Sprites/Props/sign_01.tscn" id="11_u66b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb15w"]
 size = Vector2(120, 192)
@@ -282,6 +283,11 @@ shape = SubResource("RectangleShape2D_cnmsm")
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="LevelTiles/BakedCollisions"]
 position = Vector2(384, -108)
 shape = SubResource("RectangleShape2D_cek8c")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Sign_01" parent="Props" instance=ExtResource("11_u66b5")]
+position = Vector2(-456, -73)
 
 [node name="Player" parent="." instance=ExtResource("3_c0c7p")]
 modifiers = SubResource("Resource_ba3p7")

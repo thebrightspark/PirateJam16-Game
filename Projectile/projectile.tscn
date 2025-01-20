@@ -66,6 +66,7 @@ amount = 75
 process_material = ExtResource("4_ttpli")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, 0)
 color = Color(1, 0, 0, 1)
 texture = SubResource("GradientTexture2D_3432j")
 
