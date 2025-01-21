@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_gk0he")
 health = 75
+name = "Firewall 3"
 texture = ExtResource("2_bbsi3")
 bandwidth = 35

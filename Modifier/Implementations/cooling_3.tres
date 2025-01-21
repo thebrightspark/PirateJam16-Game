@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_8cic3")
 cooldown_reduction_ms = 400
+name = "Optimized Cooling 3"
 texture = ExtResource("2_mj3i5")
 bandwidth = 40

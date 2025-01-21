@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_mulqg")
 homing = true
+name = "Directed"
 texture = ExtResource("2_3x3yg")
 bandwidth = 20

@@ -7,7 +7,9 @@ class_name InventorySlot
 func _ready() -> void:
 	if contained_modifier != null:
 		content_display.texture = contained_modifier.texture
+		tooltip_text = contained_modifier.name
 
 func set_modifier(modifier: BaseModifier) -> void:
 	contained_modifier = modifier
 	content_display.texture = modifier.texture if modifier != null else null
+	tooltip_text = modifier.name

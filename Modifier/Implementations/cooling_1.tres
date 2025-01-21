@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_mjchc")
 cooldown_reduction_ms = 100
+name = "Optimized Cooling 1"
 texture = ExtResource("2_vmtrw")
 bandwidth = 10

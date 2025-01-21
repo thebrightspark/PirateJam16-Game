@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_yg0v7")
 bounce = 5
+name = "Rebound 3"
 texture = ExtResource("2_dqrab")
 bandwidth = 45

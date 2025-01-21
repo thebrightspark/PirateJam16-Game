@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_4cbs7")
 pierce = 1
+name = "Persistence 1"
 texture = ExtResource("2_2kojm")
 bandwidth = 10

@@ -34,6 +34,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 1
@@ -42,10 +43,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Control/CenterContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ContentDisplay" type="Sprite2D" parent="Control/CenterContainer/Panel"]
 
@@ -57,12 +60,14 @@ centered = false
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 1.0
+mouse_filter = 2
 color = Color(1, 1, 0.392157, 1)
 
 [node name="Left" type="ColorRect" parent="Control"]
 layout_mode = 0
 offset_right = 1.0
 offset_bottom = 80.0
+mouse_filter = 2
 color = Color(1, 1, 0.392157, 1)
 
 [node name="Right" type="ColorRect" parent="Control"]
@@ -70,4 +75,5 @@ layout_mode = 0
 offset_left = 79.0
 offset_right = 80.0
 offset_bottom = 80.0
+mouse_filter = 2
 color = Color(1, 1, 0.392157, 1)

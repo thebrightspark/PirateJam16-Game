@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_fo3e0")
 lifesteal_percentage = 40
+name = "Freaker 2"
 texture = ExtResource("2_x67n8")
 bandwidth = 25

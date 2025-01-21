@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_1lfup")
 multishot = 2
+name = "Spread 1"
 texture = ExtResource("2_prfs1")
 bandwidth = 15
