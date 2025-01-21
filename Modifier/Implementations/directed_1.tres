@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="HomingModifier" load_steps=2 format=3 uid="uid://gw0cgknbea1d"]
+[gd_resource type="Resource" script_class="HomingModifier" load_steps=3 format=3 uid="uid://gw0cgknbea1d"]
 
 [ext_resource type="Script" path="res://Modifier/Base/homing_modifier.gd" id="1_mulqg"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_3x3yg"]
 
 [resource]
 script = ExtResource("1_mulqg")
 homing = true
+texture = ExtResource("2_3x3yg")
 bandwidth = 20

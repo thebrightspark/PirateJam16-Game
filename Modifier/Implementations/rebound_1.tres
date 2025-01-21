@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="BounceModifier" load_steps=2 format=3 uid="uid://do3crs4subtlp"]
+[gd_resource type="Resource" script_class="BounceModifier" load_steps=3 format=3 uid="uid://do3crs4subtlp"]
 
 [ext_resource type="Script" path="res://Modifier/Base/bounce_modifier.gd" id="1_ii4sx"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_h6j6u"]
 
 [resource]
 script = ExtResource("1_ii4sx")
 bounce = 2
+texture = ExtResource("2_h6j6u")
 bandwidth = 15

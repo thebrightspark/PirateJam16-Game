@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=47 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_01.tres" id="1_ra72m"]
@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b3rfpyeibw7w2" path="res://Overlay/overlay.tscn" id="4_kbfsw"]
 [ext_resource type="PackedScene" uid="uid://co3v7a0fdjcbk" path="res://Enemy/enemy.tscn" id="5_3ixp8"]
 [ext_resource type="Script" path="res://Modifier/modifier_collection.gd" id="6_roxwm"]
-[ext_resource type="PackedScene" uid="uid://cu1gxmt8xllhi" path="res://Assets/Sprites/Props/sign_01.tscn" id="11_u66b5"]
 [ext_resource type="PackedScene" uid="uid://duh72ea540n4b" path="res://Item/item_pickup.tscn" id="11_6gcaa"]
+[ext_resource type="PackedScene" uid="uid://cu1gxmt8xllhi" path="res://Assets/Sprites/Props/sign_01.tscn" id="11_u66b5"]
 [ext_resource type="Resource" uid="uid://dxtweujkv6o3a" path="res://Modifier/Implementations/spread_1.tres" id="12_4k3ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb15w"]

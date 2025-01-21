@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="PierceModifier" load_steps=2 format=3 uid="uid://cif11rytb2o23"]
+[gd_resource type="Resource" script_class="PierceModifier" load_steps=3 format=3 uid="uid://cif11rytb2o23"]
 
 [ext_resource type="Script" path="res://Modifier/Base/pierce_modifier.gd" id="1_fk6rj"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_kilbh"]
 
 [resource]
 script = ExtResource("1_fk6rj")
 pierce = 4
+texture = ExtResource("2_kilbh")
 bandwidth = 45

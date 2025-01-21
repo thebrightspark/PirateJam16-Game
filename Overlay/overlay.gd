@@ -4,16 +4,11 @@ extends CanvasLayer
 @export_group("Internal")
 @export var health_gradient: GradientTexture1D
 
-var health_label: Label
-var health_bar: ColorRect
-var velocity_label: Label
+@onready var health_label: Label = $HealthValueLabel
+@onready var health_bar: ColorRect = $HealthBar
+@onready var velocity_label: Label = $VelValueLabel
 
 var last_health = 0
-
-func _ready() -> void:
-	health_label = get_node("HealthValueLabel")
-	health_bar = get_node("HealthBar")
-	velocity_label = get_node("VelValueLabel")
 
 func _process(_delta: float) -> void:
 	update_health()

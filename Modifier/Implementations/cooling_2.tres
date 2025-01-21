@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="CooldownModifier" load_steps=2 format=3 uid="uid://bsqcg7nx5um02"]
+[gd_resource type="Resource" script_class="CooldownModifier" load_steps=3 format=3 uid="uid://bsqcg7nx5um02"]
 
 [ext_resource type="Script" path="res://Modifier/Base/cooldown_modifier.gd" id="1_i5bpg"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_xure7"]
 
 [resource]
 script = ExtResource("1_i5bpg")
 cooldown_reduction_ms = 200
+texture = ExtResource("2_xure7")
 bandwidth = 25

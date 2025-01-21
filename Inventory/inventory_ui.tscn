@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk1r4rparw0qt"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_ui.gd" id="1_dkxxi"]
+[ext_resource type="PackedScene" uid="uid://bslcaq3n0fu2v" path="res://Inventory/inventory_slot.tscn" id="2_ebk2k"]
+[ext_resource type="Resource" uid="uid://c0btp4ed0mpuw" path="res://Inventory/inventory.tres" id="2_vtxqf"]
+
+[node name="inventory_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dkxxi")
+inventory = ExtResource("2_vtxqf")
+
+[node name="BackgroundDim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.662745)
+
+[node name="InvSlots" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 250.0
+
+[node name="GridContainer" type="GridContainer" parent="InvSlots"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -102.0
+offset_right = 518.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10
+
+[node name="InventorySlot" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2

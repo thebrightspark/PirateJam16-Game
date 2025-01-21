@@ -3,10 +3,7 @@ extends CharacterBody2D
 @export var health = 10.0
 @export var max_health = 10.0
 
-var health_label: Label
-
-func _ready() -> void:
-	health_label = get_node("HealthLabel")
+@onready var health_label: Label = $HealthLabel
 
 func _physics_process(delta: float) -> void:
 	health_label.text = str(health)

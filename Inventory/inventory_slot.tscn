@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://bslcaq3n0fu2v"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_slot.gd" id="1_2ptke"]
+
+[sub_resource type="Gradient" id="Gradient_ukctv"]
+offsets = PackedFloat32Array(0, 0.168582)
+colors = PackedColorArray(1, 1, 0.392157, 1, 1, 1, 0.392157, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_opm3r"]
+gradient = SubResource("Gradient_ukctv")
+width = 80
+height = 80
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="InventorySlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_2ptke")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/CenterContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="ContentDisplay" type="Sprite2D" parent="Control/CenterContainer/Panel"]
+
+[node name="Background" type="Sprite2D" parent="Control"]
+texture = SubResource("GradientTexture2D_opm3r")
+centered = false
+
+[node name="Top" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 1.0
+color = Color(1, 1, 0.392157, 1)
+
+[node name="Left" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 80.0
+color = Color(1, 1, 0.392157, 1)
+
+[node name="Right" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 79.0
+offset_right = 80.0
+offset_bottom = 80.0
+color = Color(1, 1, 0.392157, 1)

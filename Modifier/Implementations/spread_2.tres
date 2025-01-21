@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="MultishotModifier" load_steps=2 format=3 uid="uid://djlbkibbbr6rn"]
+[gd_resource type="Resource" script_class="MultishotModifier" load_steps=3 format=3 uid="uid://djlbkibbbr6rn"]
 
 [ext_resource type="Script" path="res://Modifier/Base/multishot_modifier.gd" id="1_315p7"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_115qj"]
 
 [resource]
 script = ExtResource("1_315p7")
 multishot = 4
+texture = ExtResource("2_115qj")
 bandwidth = 20

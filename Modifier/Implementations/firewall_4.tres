@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="HealthModifier" load_steps=2 format=3 uid="uid://vugohidjje0g"]
+[gd_resource type="Resource" script_class="HealthModifier" load_steps=3 format=3 uid="uid://vugohidjje0g"]
 
 [ext_resource type="Script" path="res://Modifier/Base/health_modifier.gd" id="1_nff2r"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_nf1ka"]
 
 [resource]
 script = ExtResource("1_nff2r")
 health = 100
+texture = ExtResource("2_nf1ka")
 bandwidth = 50

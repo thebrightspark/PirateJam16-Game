@@ -1,10 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
 @export var max_health = 100
 @export var health = 100
 @export var speed = 150.0
 @export var jump_speed = 400.0
 @export var modifiers: ModifierCollection
+@export var inventory: Inventory
 
 @export_group("Levitate")
 @export var levitate_max_speed = 200.0
@@ -30,12 +32,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_attacking()
-
-func add_modifier(modifier: BaseModifier) -> void:
-	modifiers.add_modifier(modifier)
-
-func remove_modifier(index: int) -> void:
-	modifiers.remove_modifier(index)
 
 func handle_movement(delta: float) -> void:
 	# Add the gravity

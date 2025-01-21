@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="LifestealModifier" load_steps=2 format=3 uid="uid://dwudq216cn1ni"]
+[gd_resource type="Resource" script_class="LifestealModifier" load_steps=3 format=3 uid="uid://dwudq216cn1ni"]
 
 [ext_resource type="Script" path="res://Modifier/Base/lifesteal_modifier.gd" id="1_hgpxs"]
+[ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_buvan"]
 
 [resource]
 script = ExtResource("1_hgpxs")
 lifesteal_percentage = 60
+texture = ExtResource("2_buvan")
 bandwidth = 50
