@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bslcaq3n0fu2v"]
+[gd_scene load_steps=6 format=3 uid="uid://bslcaq3n0fu2v"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_slot.gd" id="1_2ptke"]
 
@@ -6,8 +6,19 @@
 offsets = PackedFloat32Array(0, 0.168582)
 colors = PackedColorArray(1, 1, 0.392157, 1, 1, 1, 0.392157, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_opm3r"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dc62r"]
 gradient = SubResource("Gradient_ukctv")
+width = 80
+height = 80
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_8e6co"]
+offsets = PackedFloat32Array(0, 0.304688)
+colors = PackedColorArray(0.756863, 0.196078, 0.14902, 1, 0.756863, 0.196078, 0.14902, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_opm3r"]
+gradient = SubResource("Gradient_8e6co")
 width = 80
 height = 80
 fill_from = Vector2(0, 1)
@@ -52,28 +63,73 @@ mouse_filter = 2
 
 [node name="ContentDisplay" type="Sprite2D" parent="Control/CenterContainer/Panel"]
 
-[node name="Background" type="Sprite2D" parent="Control"]
-texture = SubResource("GradientTexture2D_opm3r")
+[node name="Unselected" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bottom" type="Sprite2D" parent="Control/Unselected"]
+texture = SubResource("GradientTexture2D_dc62r")
 centered = false
 
-[node name="Top" type="ColorRect" parent="Control"]
-layout_mode = 0
+[node name="Top" type="ColorRect" parent="Control/Unselected"]
+layout_mode = 2
 offset_right = 80.0
 offset_bottom = 1.0
 mouse_filter = 2
 color = Color(1, 1, 0.392157, 1)
 
-[node name="Left" type="ColorRect" parent="Control"]
-layout_mode = 0
+[node name="Left" type="ColorRect" parent="Control/Unselected"]
+layout_mode = 2
 offset_right = 1.0
 offset_bottom = 80.0
 mouse_filter = 2
 color = Color(1, 1, 0.392157, 1)
 
-[node name="Right" type="ColorRect" parent="Control"]
-layout_mode = 0
+[node name="Right" type="ColorRect" parent="Control/Unselected"]
+layout_mode = 2
 offset_left = 79.0
 offset_right = 80.0
 offset_bottom = 80.0
 mouse_filter = 2
 color = Color(1, 1, 0.392157, 1)
+
+[node name="Selected" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bottom" type="Sprite2D" parent="Control/Selected"]
+texture = SubResource("GradientTexture2D_opm3r")
+centered = false
+
+[node name="Top" type="ColorRect" parent="Control/Selected"]
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 2.0
+mouse_filter = 2
+color = Color(0.756863, 0.196078, 0.14902, 1)
+
+[node name="Left" type="ColorRect" parent="Control/Selected"]
+layout_mode = 2
+offset_right = 2.0
+offset_bottom = 80.0
+mouse_filter = 2
+color = Color(0.756863, 0.196078, 0.14902, 1)
+
+[node name="Right" type="ColorRect" parent="Control/Selected"]
+layout_mode = 2
+offset_left = 78.0
+offset_right = 80.0
+offset_bottom = 80.0
+mouse_filter = 2
+color = Color(0.756863, 0.196078, 0.14902, 1)
