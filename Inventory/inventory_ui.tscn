@@ -27,9 +27,14 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.662745)
 
 [node name="InvSlots" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 1152.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
 offset_bottom = 250.0
+grow_horizontal = 2
 
 [node name="GridContainer" type="GridContainer" parent="InvSlots"]
 layout_mode = 1
@@ -104,4 +109,62 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InventorySlot20" parent="InvSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="EquipSlots" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -250.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="EquipSlots"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -102.0
+offset_right = 518.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10
+
+[node name="InventorySlot" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="EquipSlots/GridContainer" instance=ExtResource("2_ebk2k")]
 layout_mode = 2

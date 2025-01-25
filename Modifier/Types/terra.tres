@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifierType" load_steps=2 format=3 uid="uid://b2digdokd2ojt"]
+
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="1_h5cti"]
+
+[resource]
+script = ExtResource("1_h5cti")
+name = "Terra"
+color = Color(0, 0.639216, 0, 1)

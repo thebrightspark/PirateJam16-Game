@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifierType" load_steps=2 format=3 uid="uid://cwbj1sbnewn4c"]
+
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="1_aa30b"]
+
+[resource]
+script = ExtResource("1_aa30b")
+name = "Undine"
+color = Color(0, 0.227451, 0.815686, 1)

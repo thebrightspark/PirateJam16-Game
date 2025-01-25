@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="LifestealModifier" load_steps=3 format=3 uid="uid://dwudq216cn1ni"]
+[gd_resource type="Resource" script_class="LifestealModifier" load_steps=11 format=3 uid="uid://dwudq216cn1ni"]
 
 [ext_resource type="Script" path="res://Modifier/Base/lifesteal_modifier.gd" id="1_hgpxs"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_buvan"]
+[ext_resource type="Resource" uid="uid://cvfhd4p3hmmo6" path="res://Modifier/Tiers/legendary.tres" id="3_8n65l"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_gnia3"]
+[ext_resource type="Resource" uid="uid://cn63a30tiwp22" path="res://Modifier/Types/cryo.tres" id="5_xdiyt"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="6_vuvr4"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="7_xqhy4"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="8_a7vux"]
+[ext_resource type="Resource" uid="uid://b2digdokd2ojt" path="res://Modifier/Types/terra.tres" id="9_jkmli"]
+[ext_resource type="Resource" uid="uid://cwbj1sbnewn4c" path="res://Modifier/Types/undine.tres" id="10_m8105"]
 
 [resource]
 script = ExtResource("1_hgpxs")
@@ -9,3 +17,5 @@ lifesteal_percentage = 60
 name = "Freaker 3"
 texture = ExtResource("2_buvan")
 bandwidth = 50
+type = Array[ExtResource("4_gnia3")]([ExtResource("5_xdiyt"), ExtResource("6_vuvr4"), ExtResource("7_xqhy4"), ExtResource("8_a7vux"), ExtResource("9_jkmli"), ExtResource("10_m8105")])
+tier = ExtResource("3_8n65l")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifierType" load_steps=2 format=3 uid="uid://bj53pxvogn7b3"]
+
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="1_dv1we"]
+
+[resource]
+script = ExtResource("1_dv1we")
+name = "Necro"
+color = Color(0.0768358, 0.0768358, 0.0768358, 1)

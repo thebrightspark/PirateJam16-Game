@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModifierTier" load_steps=2 format=3 uid="uid://3e7nmscvsqf7"]
+
+[ext_resource type="Script" path="res://Modifier/Tiers/modifier_tier.gd" id="1_5rj2q"]
+
+[resource]
+script = ExtResource("1_5rj2q")
+name = "Overclocked"
+index = 3
+color = Color(0.65098, 0, 0.713726, 1)

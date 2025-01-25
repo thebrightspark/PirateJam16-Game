@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="CooldownModifier" load_steps=3 format=3 uid="uid://bsqcg7nx5um02"]
+[gd_resource type="Resource" script_class="CooldownModifier" load_steps=11 format=3 uid="uid://bsqcg7nx5um02"]
 
 [ext_resource type="Script" path="res://Modifier/Base/cooldown_modifier.gd" id="1_i5bpg"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_xure7"]
+[ext_resource type="Resource" uid="uid://bsfjx0e7trlx0" path="res://Modifier/Tiers/common.tres" id="3_5tt0r"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_qqvlu"]
+[ext_resource type="Resource" uid="uid://cn63a30tiwp22" path="res://Modifier/Types/cryo.tres" id="5_o267u"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="6_yda67"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="7_sxsuw"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="8_n7gom"]
+[ext_resource type="Resource" uid="uid://b2digdokd2ojt" path="res://Modifier/Types/terra.tres" id="9_pmyyl"]
+[ext_resource type="Resource" uid="uid://cwbj1sbnewn4c" path="res://Modifier/Types/undine.tres" id="10_pxg7b"]
 
 [resource]
 script = ExtResource("1_i5bpg")
@@ -9,3 +17,5 @@ cooldown_reduction_ms = 200
 name = "Optimized Cooling 2"
 texture = ExtResource("2_xure7")
 bandwidth = 25
+type = Array[ExtResource("4_qqvlu")]([ExtResource("5_o267u"), ExtResource("6_yda67"), ExtResource("7_sxsuw"), ExtResource("8_n7gom"), ExtResource("9_pmyyl"), ExtResource("10_pxg7b")])
+tier = ExtResource("3_5tt0r")

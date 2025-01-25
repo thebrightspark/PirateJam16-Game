@@ -1,7 +1,14 @@
-[gd_resource type="Resource" script_class="HomingModifier" load_steps=3 format=3 uid="uid://gw0cgknbea1d"]
+[gd_resource type="Resource" script_class="HomingModifier" load_steps=10 format=3 uid="uid://gw0cgknbea1d"]
 
 [ext_resource type="Script" path="res://Modifier/Base/homing_modifier.gd" id="1_mulqg"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_3x3yg"]
+[ext_resource type="Resource" uid="uid://3e7nmscvsqf7" path="res://Modifier/Tiers/rare.tres" id="3_7s3am"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_1711s"]
+[ext_resource type="Resource" uid="uid://cn63a30tiwp22" path="res://Modifier/Types/cryo.tres" id="5_te6xf"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="6_6nyhx"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="7_m04co"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="8_ntqx7"]
+[ext_resource type="Resource" uid="uid://cwbj1sbnewn4c" path="res://Modifier/Types/undine.tres" id="9_n2yrj"]
 
 [resource]
 script = ExtResource("1_mulqg")
@@ -9,3 +16,5 @@ homing = true
 name = "Directed"
 texture = ExtResource("2_3x3yg")
 bandwidth = 20
+type = Array[ExtResource("4_1711s")]([ExtResource("5_te6xf"), ExtResource("6_6nyhx"), ExtResource("7_m04co"), ExtResource("8_ntqx7"), ExtResource("9_n2yrj")])
+tier = ExtResource("3_7s3am")

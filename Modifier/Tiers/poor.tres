@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModifierTier" load_steps=2 format=3 uid="uid://cdoc7ud6f5qmc"]
+
+[ext_resource type="Script" path="res://Modifier/Tiers/modifier_tier.gd" id="1_goewy"]
+
+[resource]
+script = ExtResource("1_goewy")
+name = "Faulty"
+index = 0
+color = Color(0.662452, 0.662452, 0.662452, 1)

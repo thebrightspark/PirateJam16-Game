@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifierType" load_steps=2 format=3 uid="uid://brfvultplx17p"]
+
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="1_eog4i"]
+
+[resource]
+script = ExtResource("1_eog4i")
+name = "Force"
+color = Color(0.737255, 0.176471, 0, 1)

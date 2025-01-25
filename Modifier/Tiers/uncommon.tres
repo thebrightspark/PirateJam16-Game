@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModifierTier" load_steps=2 format=3 uid="uid://djuyspl7oc2ds"]
+
+[ext_resource type="Script" path="res://Modifier/Tiers/modifier_tier.gd" id="1_t0iax"]
+
+[resource]
+script = ExtResource("1_t0iax")
+name = "Pristine"
+index = 2
+color = Color(0, 0.552941, 0.819608, 1)

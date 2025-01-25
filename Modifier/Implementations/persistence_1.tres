@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="PierceModifier" load_steps=3 format=3 uid="uid://bce7teena5aji"]
+[gd_resource type="Resource" script_class="PierceModifier" load_steps=9 format=3 uid="uid://bce7teena5aji"]
 
 [ext_resource type="Script" path="res://Modifier/Base/pierce_modifier.gd" id="1_4cbs7"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_2kojm"]
+[ext_resource type="Resource" uid="uid://bsfjx0e7trlx0" path="res://Modifier/Tiers/common.tres" id="3_itd7y"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_cxxuq"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="5_ub52o"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="6_1ypbf"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="7_oikw1"]
+[ext_resource type="Resource" uid="uid://cwbj1sbnewn4c" path="res://Modifier/Types/undine.tres" id="8_y1rv3"]
 
 [resource]
 script = ExtResource("1_4cbs7")
@@ -9,3 +15,5 @@ pierce = 1
 name = "Persistence 1"
 texture = ExtResource("2_2kojm")
 bandwidth = 10
+type = Array[ExtResource("4_cxxuq")]([ExtResource("5_ub52o"), ExtResource("6_1ypbf"), ExtResource("7_oikw1"), ExtResource("8_y1rv3")])
+tier = ExtResource("3_itd7y")

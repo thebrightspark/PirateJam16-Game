@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="HealthModifier" load_steps=3 format=3 uid="uid://cpvl3pjl2b7k7"]
+[gd_resource type="Resource" script_class="HealthModifier" load_steps=11 format=3 uid="uid://cpvl3pjl2b7k7"]
 
 [ext_resource type="Script" path="res://Modifier/Base/health_modifier.gd" id="1_shd6o"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_46yu8"]
+[ext_resource type="Resource" uid="uid://bsfjx0e7trlx0" path="res://Modifier/Tiers/common.tres" id="3_8eolr"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_7g3aw"]
+[ext_resource type="Resource" uid="uid://cn63a30tiwp22" path="res://Modifier/Types/cryo.tres" id="5_uh5v4"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="6_758ce"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="7_fbwda"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="8_2k0on"]
+[ext_resource type="Resource" uid="uid://b2digdokd2ojt" path="res://Modifier/Types/terra.tres" id="9_c2av4"]
+[ext_resource type="Resource" uid="uid://cwbj1sbnewn4c" path="res://Modifier/Types/undine.tres" id="10_xjt88"]
 
 [resource]
 script = ExtResource("1_shd6o")
@@ -9,3 +17,5 @@ health = 20
 name = "Firewall 1"
 texture = ExtResource("2_46yu8")
 bandwidth = 10
+type = Array[ExtResource("4_7g3aw")]([ExtResource("5_uh5v4"), ExtResource("6_758ce"), ExtResource("7_fbwda"), ExtResource("8_2k0on"), ExtResource("9_c2av4"), ExtResource("10_xjt88")])
+tier = ExtResource("3_8eolr")

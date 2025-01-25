@@ -18,7 +18,7 @@ func _ready() -> void:
 func set_modifier(modifier: BaseModifier) -> void:
 	contained_modifier = modifier
 	content_display.texture = modifier.texture if modifier != null else null
-	tooltip_text = modifier.name
+	tooltip_text = modifier.name if modifier != null else ""
 
 func set_selected(selected: bool) -> void:
 	is_selected = selected

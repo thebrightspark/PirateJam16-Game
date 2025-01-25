@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="BounceModifier" load_steps=3 format=3 uid="uid://dqtan0a3a85di"]
+[gd_resource type="Resource" script_class="BounceModifier" load_steps=9 format=3 uid="uid://dqtan0a3a85di"]
 
 [ext_resource type="Script" path="res://Modifier/Base/bounce_modifier.gd" id="1_lprfb"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_k7ipc"]
+[ext_resource type="Resource" uid="uid://3e7nmscvsqf7" path="res://Modifier/Tiers/rare.tres" id="3_y4o34"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_qgomx"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="5_ryv0f"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="6_ga2n1"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="7_bf0ge"]
+[ext_resource type="Resource" uid="uid://cwbj1sbnewn4c" path="res://Modifier/Types/undine.tres" id="8_y5ad4"]
 
 [resource]
 script = ExtResource("1_lprfb")
@@ -9,3 +15,5 @@ bounce = 3
 name = "Rebound 2"
 texture = ExtResource("2_k7ipc")
 bandwidth = 30
+type = Array[ExtResource("4_qgomx")]([ExtResource("5_ryv0f"), ExtResource("6_ga2n1"), ExtResource("7_bf0ge"), ExtResource("8_y5ad4")])
+tier = ExtResource("3_y4o34")

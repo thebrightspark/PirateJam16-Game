@@ -21,6 +21,9 @@ func create_projectile_attributes() -> ProjectileAttributes:
 	attributes.pierce = pierce
 	return attributes
 
+func get_modifier(index: int) -> BaseModifier:
+	return modifiers[index] if index >= 0 and index < modifiers.size() else null
+
 func set_modifiers(new_modifiers: Array[BaseModifier]) -> void:
 	bandwidth = 0
 	bounce = 0

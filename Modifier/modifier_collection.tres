@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="ModifierCollection" load_steps=2 format=3 uid="uid://bmk47l7nirjfa"]
+[gd_resource type="Resource" script_class="ModifierCollection" load_steps=3 format=3 uid="uid://bmk47l7nirjfa"]
 
 [ext_resource type="Script" path="res://Modifier/modifier_collection.gd" id="1_pupjn"]
+[ext_resource type="Script" path="res://Modifier/Base/base_modifier.gd" id="1_yw2kp"]
 
 [resource]
 script = ExtResource("1_pupjn")
+modifiers = Array[ExtResource("1_yw2kp")]([])

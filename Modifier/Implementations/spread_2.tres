@@ -1,7 +1,12 @@
-[gd_resource type="Resource" script_class="MultishotModifier" load_steps=3 format=3 uid="uid://djlbkibbbr6rn"]
+[gd_resource type="Resource" script_class="MultishotModifier" load_steps=8 format=3 uid="uid://djlbkibbbr6rn"]
 
 [ext_resource type="Script" path="res://Modifier/Base/multishot_modifier.gd" id="1_315p7"]
 [ext_resource type="Texture2D" uid="uid://bxnpk23f07qff" path="res://Modifier/modifier_placeholder_texture.tres" id="2_115qj"]
+[ext_resource type="Resource" uid="uid://djuyspl7oc2ds" path="res://Modifier/Tiers/uncommon.tres" id="3_juehj"]
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="4_lwdj8"]
+[ext_resource type="Resource" uid="uid://brfvultplx17p" path="res://Modifier/Types/force.tres" id="5_tf18e"]
+[ext_resource type="Resource" uid="uid://d3bqd5jjgqtq3" path="res://Modifier/Types/ignis.tres" id="6_jrdce"]
+[ext_resource type="Resource" uid="uid://bj53pxvogn7b3" path="res://Modifier/Types/necro.tres" id="7_s518v"]
 
 [resource]
 script = ExtResource("1_315p7")
@@ -9,3 +14,5 @@ multishot = 4
 name = "Spread 2"
 texture = ExtResource("2_115qj")
 bandwidth = 20
+type = Array[ExtResource("4_lwdj8")]([ExtResource("5_tf18e"), ExtResource("6_jrdce"), ExtResource("7_s518v")])
+tier = ExtResource("3_juehj")

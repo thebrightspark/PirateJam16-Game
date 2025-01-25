@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModifierTier" load_steps=2 format=3 uid="uid://cvfhd4p3hmmo6"]
+
+[ext_resource type="Script" path="res://Modifier/Tiers/modifier_tier.gd" id="1_4b74a"]
+
+[resource]
+script = ExtResource("1_4b74a")
+name = "Hacked"
+index = 4
+color = Color(0.921569, 0.909804, 0, 1)

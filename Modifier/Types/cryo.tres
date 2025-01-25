@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifierType" load_steps=2 format=3 uid="uid://cn63a30tiwp22"]
+
+[ext_resource type="Script" path="res://Modifier/Types/modifier_type.gd" id="1_sb5ab"]
+
+[resource]
+script = ExtResource("1_sb5ab")
+name = "Cryo"
+color = Color(0, 0.811765, 0.882353, 1)
