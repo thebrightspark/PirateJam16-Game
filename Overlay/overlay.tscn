@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3rfpyeibw7w2"]
+[gd_scene load_steps=11 format=3 uid="uid://b3rfpyeibw7w2"]
 
 [ext_resource type="Script" path="res://Overlay/overlay.gd" id="1_a2ovv"]
 [ext_resource type="LabelSettings" uid="uid://dvu487aqvh00u" path="res://Overlay/overlay_health_label_settings.tres" id="3_e61ij"]
@@ -14,6 +14,13 @@ colors = PackedColorArray(0.741176, 0, 0, 1, 0.741176, 0.741176, 0, 1, 0, 0.7411
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_qmj6e"]
 gradient = SubResource("Gradient_bd0xy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rg1n3"]
+font_size = 20
+font_color = Color(1, 0.273989, 0.21327, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.5, 1.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_83t4i"]
 font_size = 20
@@ -36,11 +43,18 @@ offset_right = 125.0
 offset_bottom = 54.0
 
 [node name="HealthValueLabel" type="Label" parent="."]
-offset_left = 308.0
-offset_top = 55.0
-offset_right = 378.0
-offset_bottom = 83.0
+offset_left = 140.0
+offset_top = 27.0
+offset_right = 210.0
+offset_bottom = 55.0
 label_settings = ExtResource("3_e61ij")
+
+[node name="LevitateValueLabel" type="Label" parent="."]
+offset_left = 140.0
+offset_top = 55.0
+offset_right = 210.0
+offset_bottom = 83.0
+label_settings = SubResource("LabelSettings_rg1n3")
 
 [node name="VelLabel" type="Label" parent="."]
 visible = false

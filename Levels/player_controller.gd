@@ -18,6 +18,8 @@ class_name Player
 @export var spread_deg = 0
 @export var multishot_spread_deg = 5
 
+@onready var levitate_particles: GPUParticles2D = $LevitateParticles
+
 var projectile_scene: PackedScene = preload("res://Projectile/projectile.tscn")
 var modifier_collection: ModifierCollection
 var last_attack_timestamp = 0.0
@@ -32,6 +34,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_attacking()
+	levitate_particles.emitting = levitating
 
 func handle_movement(delta: float) -> void:
 	# Add the gravity
@@ -39,7 +42,6 @@ func handle_movement(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if is_on_floor():
-		levitating = false
 		levitate_amount = 0.0
 
 	# Handle jump
@@ -48,7 +50,7 @@ func handle_movement(delta: float) -> void:
 			velocity.y = -jump_speed
 		else:
 			# Handle levitation
-			if not levitating and levitate_amount < levitate_amount_max and velocity.y < levitate_max_speed:
+			if not levitating and levitate_amount < levitate_amount_max:
 				levitating = true
 			if levitating:
 				if velocity.y > -levitate_max_speed:
@@ -56,6 +58,8 @@ func handle_movement(delta: float) -> void:
 					levitate_amount += delta
 				if levitate_amount >= levitate_amount_max:
 					levitating = false
+	else:
+		levitating = false
 
 	# Handle horizontal movement
 	if Input.is_action_pressed("Left"):

@@ -1,14 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2f3nfgx1dfb8"]
+[gd_scene load_steps=12 format=3 uid="uid://b2f3nfgx1dfb8"]
 
 [ext_resource type="Script" path="res://Levels/player_controller.gd" id="1_f71sg"]
 [ext_resource type="Resource" uid="uid://c0btp4ed0mpuw" path="res://Inventory/inventory.tres" id="2_nxvoq"]
 [ext_resource type="Texture2D" uid="uid://bamis27fp54qc" path="res://Assets/player_temp.png" id="2_ykx7v"]
 [ext_resource type="Shape2D" uid="uid://cvkdexjtfy1uh" path="res://Player/player_shape.tres" id="3_1shau"]
 
+[sub_resource type="Gradient" id="Gradient_penhx"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.148515, 0.49505, 0.825082)
+colors = PackedColorArray(0.301961, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m6rwa"]
+gradient = SubResource("Gradient_penhx")
+
+[sub_resource type="Curve" id="Curve_xkeqd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_h5y21"]
+curve = SubResource("Curve_xkeqd")
+
+[sub_resource type="Curve" id="Curve_l4p8j"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ixtbc"]
+curve = SubResource("Curve_l4p8j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1no65"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 24.52
+initial_velocity_max = 24.52
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_ixtbc")
+color_ramp = SubResource("GradientTexture1D_m6rwa")
+emission_curve = SubResource("CurveTexture_h5y21")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 50
 script = ExtResource("1_f71sg")
 inventory = ExtResource("2_nxvoq")
+
+[node name="LevitateParticles" type="GPUParticles2D" parent="."]
+position = Vector2(0, 22)
+amount = 75
+process_material = SubResource("ParticleProcessMaterial_1no65")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1.3)
