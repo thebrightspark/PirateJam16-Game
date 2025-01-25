@@ -40,6 +40,7 @@ func handle_movement(delta: float) -> void:
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		velocity.y = min(Globals.terminal_velocity, velocity.y)
 
 	if is_on_floor():
 		levitate_amount = 0.0
