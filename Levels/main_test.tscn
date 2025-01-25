@@ -285,7 +285,10 @@ position = Vector2(-456, -73)
 
 [node name="Player" parent="." instance=ExtResource("3_c0c7p")]
 position = Vector2(0, -65)
+jump_speed = 250.0
 modifiers = ExtResource("5_u51hp")
+levitate_max_speed = 150.0
+levitate_acceleration = 1800.0
 
 [node name="Overlay" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kbfsw")]
 player = NodePath("../Player")
