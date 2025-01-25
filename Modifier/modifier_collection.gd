@@ -25,6 +25,7 @@ func get_modifier(index: int) -> BaseModifier:
 	return modifiers[index] if index >= 0 and index < modifiers.size() else null
 
 func set_modifiers(new_modifiers: Array[BaseModifier]) -> void:
+	modifiers.clear()
 	bandwidth = 0
 	bounce = 0
 	cooldown = 0

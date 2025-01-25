@@ -17,6 +17,7 @@ func _ready() -> void:
 		slot.mouse_entered.connect(func(): on_slot_mouse_entered(slot))
 		slot.mouse_exited.connect(func(): on_slot_mouse_exited(slot))
 	update_inv_slots()
+	update_equip_slots()
 	inventory.inventory_changed.connect(update_inv_slots)
 
 func _process(_delta: float) -> void:
