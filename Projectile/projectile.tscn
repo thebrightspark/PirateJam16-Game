@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cucufcbiws0qs"]
+[gd_scene load_steps=13 format=3 uid="uid://cucufcbiws0qs"]
 
 [ext_resource type="Script" path="res://Projectile/projectile.gd" id="1_yu4pw"]
 [ext_resource type="Shape2D" uid="uid://sr76khwufdb" path="res://Projectile/projectile_shape.tres" id="2_b2uv2"]
 [ext_resource type="Texture2D" uid="uid://xon372yoqj0w" path="res://Assets/Sprites/Spells/Force-Spritesheet.png" id="3_6mkku"]
 [ext_resource type="Material" uid="uid://c4baqu5eacs5m" path="res://Assets/Sprites/Spells/ForceSpellParticles.tres" id="4_ttpli"]
+[ext_resource type="AudioStream" uid="uid://cnr488bm7iw6g" path="res://Assets/Audio/SFX/Shoot_Force.wav" id="5_oe1yf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kjpsb"]
 friction = 0.0
@@ -50,7 +51,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Projectile" type="RigidBody2D"]
+[node name="Projectile" type="RigidBody2D" node_paths=PackedStringArray("AudioPlayer")]
 collision_layer = 0
 collision_mask = 2
 mass = 0.001
@@ -60,6 +61,7 @@ custom_integrator = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_yu4pw")
+AudioPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 75
@@ -90,6 +92,9 @@ shape = ExtResource("2_b2uv2")
 [node name="DeathDelay" type="Timer" parent="."]
 process_callback = 0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_oe1yf")
 
 [connection signal="body_entered" from="." to="." method="_on_environment_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_enemy_entered"]

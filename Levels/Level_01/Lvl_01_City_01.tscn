@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=4 uid="uid://bmmxprdugn05l"]
+
+[ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_first.tres" id="1_i2emr"]
+[ext_resource type="PackedScene" uid="uid://duh72ea540n4b" path="res://Item/item_pickup.tscn" id="2_tg1lg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_23qlq"]
+size = Vector2(18, 48)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0k78f"]
+size = Vector2(32, 48)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s3f4i"]
+size = Vector2(24, 26)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yolm4"]
+size = Vector2(32, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_houap"]
+size = Vector2(24, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qttuc"]
+size = Vector2(2, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_l18oq"]
+size = Vector2(81, 72)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ru8ji"]
+size = Vector2(14, 20)
+
+[node name="Lvl01City" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD+//z/AQACAAAAAAD///z/AQACAAAAAAAAAPz/AQACAAAAAAABAPz/AQACAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQABAAAAAAD6////AQABAAAAAFD6//7/AQABAAAAAFD6//3/AQABAAAAAFD9//z/AQACAAAAAAD6//z/AQABAAAAAFD6//v/AQABAAAAAFD6//r/AQABAAAAAFD8//j/AQABAAAAADD9//j/AQABAAAAADD+//j/AQABAAAAADD///j/AQABAAAAADD7//j/AQABAAAAADD6//n/AQABAAAAAFAAAPj/AQABAAAAADACAPv/AQABAAAAAGACAPr/AQABAAAAAGACAPn/AQABAAAAAGABAPj/AQABAAAAADD8//z/AQADAAAAADACAPz/AQACAAEAADD6/wAAAQABAAEAAAD6//j/AQABAAEAAFACAPj/AQABAAEAADADAP3/AQABAAAAAGADAPz/AQABAAEAADADAAAAAQABAAAAAAADAPj/AQAAAAEAAAADAPn/AQAAAAEAAAADAPr/AQAAAAEAAAADAPv/AQAAAAEAAAAEAPj/AQAAAAEAAAAEAPn/AQAAAAEAAAAEAPr/AQAAAAEAAAAEAPv/AQAAAAEAAAAEAPz/AQAAAAEAAAAEAP3/AQAAAAEAAAD6/wEAAQAAAAEAAAD7/wEAAQAAAAEAAAD8/wEAAQAAAAEAAAD9/wEAAQAAAAEAAAD+/wEAAQAAAAEAAAD//wEAAQAAAAEAAAAAAAEAAQAAAAEAAAABAAEAAQAAAAEAAAACAAEAAQAAAAEAAAADAAEAAQAAAAEAAAAEAAEAAQAAAAEAAAD5//j/AQAAAAEAAAD5//n/AQAAAAEAAAD5//r/AQAAAAEAAAD5//v/AQAAAAEAAAD5//z/AQAAAAEAAAD5//3/AQAAAAEAAAD5//7/AQAAAAEAAAD5////AQAAAAEAAAD5/wAAAQAAAAEAAAD5/wEAAQAAAAEAAAD5//f/AQAAAAEAAAD6//f/AQAAAAEAAAD7//f/AQAAAAEAAAD8//f/AQAAAAEAAAD9//f/AQAAAAEAAAD+//f/AQAAAAEAAAD///f/AQAAAAEAAAAAAPf/AQAAAAEAAAABAPf/AQAAAAEAAAACAPf/AQAAAAEAAAADAPf/AQAAAAEAAAAEAPf/AQAAAAEAAAAEAAAAAQAAAAEAAAA=")
+tile_set = ExtResource("1_i2emr")
+
+[node name="LevelProps" type="Node2D" parent="."]
+
+[node name="Bookcase" type="Sprite2D" parent="LevelProps"]
+position = Vector2(-111, -24)
+texture = SubResource("PlaceholderTexture2D_23qlq")
+
+[node name="Fridge" type="Sprite2D" parent="LevelProps"]
+position = Vector2(45, -24)
+texture = SubResource("PlaceholderTexture2D_0k78f")
+
+[node name="Stove" type="Sprite2D" parent="LevelProps"]
+position = Vector2(17, -13)
+texture = SubResource("PlaceholderTexture2D_s3f4i")
+
+[node name="Table" type="Sprite2D" parent="LevelProps"]
+position = Vector2(-46, -8)
+texture = SubResource("PlaceholderTexture2D_yolm4")
+
+[node name="Mod Station" type="Sprite2D" parent="LevelProps"]
+position = Vector2(35, -104)
+texture = SubResource("PlaceholderTexture2D_houap")
+
+[node name="Mod Station2" type="Sprite2D" parent="LevelProps/Mod Station"]
+position = Vector2(11, -16)
+texture = SubResource("PlaceholderTexture2D_qttuc")
+
+[node name="Workshop Shelf" type="Sprite2D" parent="LevelProps"]
+position = Vector2(-25, -132)
+texture = SubResource("PlaceholderTexture2D_l18oq")
+
+[node name="Chair" type="Sprite2D" parent="LevelProps"]
+position = Vector2(-71, -10)
+texture = SubResource("PlaceholderTexture2D_ru8ji")
+
+[node name="ItemPickup" parent="LevelProps" instance=ExtResource("2_tg1lg")]
+position = Vector2(34, -120)

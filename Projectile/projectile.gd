@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var base_damage: int = 1
 @export var attributes: ProjectileAttributes = ProjectileAttributes.new()
+@export var AudioPlayer: AudioStreamPlayer2D
 
 @onready var particles: GPUParticles2D = $GPUParticles2D
 @onready var light: PointLight2D = $PointLight2D
@@ -21,6 +22,7 @@ var pierced = 0
 
 func _ready() -> void:
 	apply_central_impulse(Vector2(0, -attributes.speed).rotated(global_rotation).rotated(deg_to_rad(90)))
+	play_sfx()
 
 func _process(delta: float) -> void:
 	handle_age(delta)
@@ -62,6 +64,12 @@ func kill_actions_deferred() -> void:
 	collider_env.disabled = true
 	collider_enemy.disabled = true
 	freeze = true
+
+func play_sfx() -> void:
+	var pitch = randf_range(0.8, 1.2)
+	AudioPlayer.pitch_scale = pitch
+	AudioPlayer.play()
+	return
 
 func handle_age(delta: float) -> void:
 	if dead:

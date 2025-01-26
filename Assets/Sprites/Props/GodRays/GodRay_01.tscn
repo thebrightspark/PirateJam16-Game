@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjybiy86h0pf1"]
+
+[ext_resource type="Texture2D" uid="uid://bx6la3jfvriwd" path="res://Assets/Sprites/Props/GodRays/GodRay_01.png" id="1_1emel"]
+
+[sub_resource type="Animation" id="Animation_jqfpa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+
+[sub_resource type="Animation" id="Animation_bdao6"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.43333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [4.0, 3.0, 4.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qixbj"]
+_data = {
+"RESET": SubResource("Animation_jqfpa"),
+"new_animation": SubResource("Animation_bdao6")
+}
+
+[node name="GodRay01" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+color = Color(1, 1, 0.37, 1)
+energy = 4.0
+texture = ExtResource("1_1emel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qixbj")
+}
+autoplay = "new_animation"
