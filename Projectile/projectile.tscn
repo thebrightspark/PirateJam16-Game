@@ -95,6 +95,7 @@ one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_oe1yf")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_environment_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_enemy_entered"]

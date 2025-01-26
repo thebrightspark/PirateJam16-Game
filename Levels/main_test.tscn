@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=47 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_first.tres" id="1_ra72m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bmk47l7nirjfa" path="res://Modifier/modifier_collection.tres" id="5_u51hp"]
 [ext_resource type="PackedScene" uid="uid://duh72ea540n4b" path="res://Item/item_pickup.tscn" id="11_6gcaa"]
 [ext_resource type="PackedScene" uid="uid://cu1gxmt8xllhi" path="res://Assets/Sprites/Props/sign_01.tscn" id="11_u66b5"]
+[ext_resource type="AudioStream" uid="uid://dcefn7qj4coyp" path="res://Assets/Audio/Music/MainMenu_desert-of-our-breakup_Loop.ogg" id="11_wq451"]
 [ext_resource type="Resource" uid="uid://dxtweujkv6o3a" path="res://Modifier/Implementations/spread_1.tres" id="12_4k3ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb15w"]
@@ -309,3 +310,8 @@ position = Vector2(114, -40)
 [node name="ItemPickup" parent="." instance=ExtResource("11_6gcaa")]
 position = Vector2(-171, -65)
 modifier = ExtResource("12_4k3ai")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_wq451")
+autoplay = true
+bus = &"Music"
