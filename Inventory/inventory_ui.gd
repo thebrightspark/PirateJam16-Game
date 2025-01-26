@@ -4,6 +4,7 @@ extends Control
 @onready var inv_slots: Array = $InvSlots/GridContainer.get_children()
 @export var equipped_modifiers: ModifierCollection
 @onready var equip_slots: Array = $EquipSlots/GridContainer.get_children()
+@onready var tooltip: Tooltip = $Tooltip
 
 var hovered_slot: InventorySlot = null
 var selected_inv_slot: InventorySlot = null
@@ -25,11 +26,14 @@ func _process(_delta: float) -> void:
 		visible = not visible
 		get_tree().paused = visible
 
+	render_tooltip()
+
 	if visible and hovered_slot != null and Input.is_action_just_pressed("Click"):
 		handle_slot_click(hovered_slot)
 
 func on_slot_mouse_entered(slot: InventorySlot) -> void:
 	hovered_slot = slot
+	tooltip.set_labels(slot.tooltip)
 
 func on_slot_mouse_exited(slot: InventorySlot) -> void:
 	if hovered_slot == slot:
@@ -42,6 +46,12 @@ func update_inv_slots() -> void:
 func update_equip_slots() -> void:
 	for i in range(equip_slots.size()):
 		(equip_slots[i] as InventorySlot).set_modifier(equipped_modifiers.get_modifier(i))
+
+func render_tooltip() -> void:
+	if visible:
+		tooltip.visible = hovered_slot != null && hovered_slot.contained_modifier != null
+		if tooltip.visible:
+			tooltip.position = get_global_mouse_position() + tooltip.offset_position
 
 func handle_slot_click(slot: InventorySlot) -> void:
 	if selected_inv_slot == slot:

@@ -1,6 +1,9 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://bfaraencvmagc"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bfaraencvmagc"]
+
+[sub_resource type="SystemFont" id="SystemFont_rkwr6"]
 
 [resource]
+font = SubResource("SystemFont_rkwr6")
 font_size = 20
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 1)

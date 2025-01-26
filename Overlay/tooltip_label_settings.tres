@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cxapt5b5oixu4"]
+
+[sub_resource type="SystemFont" id="SystemFont_o40r8"]
+
+[resource]
+font = SubResource("SystemFont_o40r8")
+font_size = 20
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.5, 1.5)

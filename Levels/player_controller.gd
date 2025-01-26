@@ -5,6 +5,7 @@ class_name Player
 @export var health = 100
 @export var speed = 150.0
 @export var jump_speed = 400.0
+@export var bandwidth = 100
 @export var modifiers: ModifierCollection
 @export var inventory: Inventory
 

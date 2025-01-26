@@ -32,9 +32,9 @@ func update_health() -> void:
 
 func update_levitate() -> void:
 	if levitate_label.visible:
-		var amount = float(player.levitate_amount)
-		var max = float(player.levitate_amount_max)
-		var levitate_perc: float = 1.0 - (amount / max)
+		var lev_amount = float(player.levitate_amount)
+		var lev_max = float(player.levitate_amount_max)
+		var levitate_perc: float = 1.0 - (lev_amount / lev_max)
 		levitate_label.text = str(int(roundf(levitate_perc * 100))) + "%"
 		levitate_label.label_settings.font_color = get_health_color(levitate_perc)
 
