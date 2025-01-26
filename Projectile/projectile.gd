@@ -3,10 +3,18 @@ extends RigidBody2D
 @export var base_damage: int = 1
 @export var attributes: ProjectileAttributes = ProjectileAttributes.new()
 
+@onready var particles: GPUParticles2D = $GPUParticles2D
+@onready var light: PointLight2D = $PointLight2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collider_env: CollisionShape2D = $EnvironmentCollider
+@onready var collider_enemy: CollisionShape2D = $Area2D/EnemyCollider
+@onready var death_delay_timer: Timer = $DeathDelay
+
 const COLLISION_LAYER_ENVIRONMENT = 2
 const COLLISION_LAYER_ENEMY = 5
 var projectile: PackedScene = preload("res://Projectile/projectile.tscn")
 
+var dead = false
 var age: float = 0
 var bounces = 0
 var pierced = 0
@@ -21,6 +29,8 @@ func _physics_process(_delta: float) -> void:
 	look_at(global_position + linear_velocity)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if dead:
+		return
 	if attributes.drag > 0.0:
 		var drag_force = -state.linear_velocity.normalized() * attributes.drag
 		state.apply_central_force(drag_force)
@@ -36,22 +46,45 @@ func _on_enemy_entered(body: Node2D) -> void:
 func _on_enemy_exited(body: Node2D) -> void:
 	remove_collision_exception_with(body)
 
+func _on_death_delay_timeout() -> void:
+	queue_free()
+
+func kill() -> void:
+	if death_delay_timer.is_stopped():
+		death_delay_timer.start()
+		dead = true
+		particles.emitting = false
+		light.enabled = false
+		sprite.visible = false
+		call_deferred("kill_actions_deferred")
+
+func kill_actions_deferred() -> void:
+	collider_env.disabled = true
+	collider_enemy.disabled = true
+	freeze = true
+
 func handle_age(delta: float) -> void:
+	if dead:
+		return
 	age += 1.0 * delta
 	if age >= attributes.lifetime:
-		queue_free()
+		kill()
 
 func handle_enemy_hit(body: Node2D) -> void:
+	if dead:
+		return
 	if Util.is_in_collision_layer(body, "Enemies") && body.has_method("on_damage"):
 		body.on_damage(base_damage + attributes.damage)
 		pierced += 1
 		if pierced > attributes.pierce:
-			queue_free()
+			kill()
 		else:
 			add_collision_exception_with(body)
 
 func handle_bounce(body: Node) -> void:
+	if dead:
+		return
 	if Util.is_in_collision_layer(body, "Environment"):
 		bounces += 1
 		if bounces > attributes.bounce:
-			queue_free()
+			kill()
