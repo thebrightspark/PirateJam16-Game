@@ -1,13 +1,124 @@
-[gd_scene load_steps=5 format=3 uid="uid://duh72ea540n4b"]
+[gd_scene load_steps=16 format=3 uid="uid://duh72ea540n4b"]
 
 [ext_resource type="Script" path="res://Item/item_pickup.gd" id="1_jjnwe"]
 [ext_resource type="Shape2D" uid="uid://ky1io670rqfu" path="res://Item/item_pickup_shape.tres" id="1_ot5or"]
+[ext_resource type="Shader" path="res://Assets/Sprites/Modifers/Modifer_Base.gdshader" id="2_28ikr"]
+[ext_resource type="Texture2D" uid="uid://d37wi2h312oyo" path="res://Assets/Sprites/Modifers/BA_Background.png" id="3_udi8u"]
+[ext_resource type="Texture2D" uid="uid://bvki8qyn3jkq" path="res://Assets/Sprites/Modifers/BA_Border.png" id="4_v604s"]
+[ext_resource type="Texture2D" uid="uid://dxm0jw3voqequ" path="res://Assets/Sprites/Modifers/BA_Chip.png" id="5_ekfgo"]
+[ext_resource type="Texture2D" uid="uid://cko4n305b3pf6" path="res://Assets/Sprites/Modifers/BA_Circuits.png" id="5_wumwy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oo47v"]
 bounce = 0.5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xaei2"]
+shader = ExtResource("2_28ikr")
+shader_parameter/Circuit_Color = Color(1, 1, 0, 1)
+shader_parameter/BG_Color = Color(0.685733, 3.15256e-06, 2.88785e-07, 1)
+shader_parameter/Border_Color = Color(0.537012, 0.537011, 0.537011, 1)
+shader_parameter/Chip_Color = Color(0.98275, 4.81308e-06, 1.92523e-07, 1)
+shader_parameter/Circuit_Tex = ExtResource("5_wumwy")
+shader_parameter/BG_Tex = ExtResource("3_udi8u")
+shader_parameter/Border_Tex = ExtResource("4_v604s")
+shader_parameter/Chip_Tex = ExtResource("5_ekfgo")
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g7axg"]
-size = Vector2(12, 12)
+size = Vector2(4, 4)
+
+[sub_resource type="Gradient" id="Gradient_swwif"]
+offsets = PackedFloat32Array(0, 0.71875)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_008pv"]
+gradient = SubResource("Gradient_swwif")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_i7yhq"]
+resource_name = "Item Pickup"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:energy")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.6, 1.0, 0.6]
+}
+
+[sub_resource type="Animation" id="Animation_cyxie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fotjh"]
+_data = {
+"Item Pickup": SubResource("Animation_i7yhq"),
+"RESET": SubResource("Animation_cyxie")
+}
 
 [node name="ItemPickup" type="RigidBody2D"]
 collision_layer = 0
@@ -18,6 +129,8 @@ lock_rotation = true
 script = ExtResource("1_jjnwe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xaei2")
+scale = Vector2(4, 4)
 texture = SubResource("PlaceholderTexture2D_g7axg")
 
 [node name="EnvironmentCollider" type="CollisionShape2D" parent="."]
@@ -28,5 +141,16 @@ collision_layer = 64
 
 [node name="PlayerCollider" type="CollisionShape2D" parent="Area2D"]
 shape = ExtResource("1_ot5or")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.4375, 0.397727)
+color = Color(1, 0, 0, 1)
+texture = SubResource("GradientTexture2D_008pv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fotjh")
+}
+autoplay = "Item Pickup"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]
