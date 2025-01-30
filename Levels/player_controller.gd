@@ -5,9 +5,7 @@ class_name Player
 @export var health = 100
 @export var speed = 150.0
 @export var jump_speed = 400.0
-@export var bandwidth = 100
-@export var modifiers: ModifierCollection
-@export var inventory: Inventory
+@export var data: PlayerData
 
 @export_group("Levitate")
 @export var levitate_max_speed = 200.0
@@ -22,15 +20,10 @@ class_name Player
 @onready var levitate_particles: GPUParticles2D = $LevitateParticles
 
 var projectile_scene: PackedScene = preload("res://Projectile/projectile.tscn")
-var modifier_collection: ModifierCollection
 var last_attack_timestamp = 0.0
 
 var levitating = false
 var levitate_amount = 0.0
-
-func _ready() -> void:
-	if not modifiers.modifiers.is_empty():
-		modifiers.set_modifiers(modifiers.modifiers.duplicate())
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
@@ -80,7 +73,7 @@ func handle_attacking() -> void:
 		last_attack_timestamp = time
 		var mouse_pos = get_global_mouse_position()
 		var look_vec = (mouse_pos - self.global_position).normalized()
-		var multishot = modifiers.multishot + 1
+		var multishot = data.modifiers_left.multishot + 1
 		var multishot_rotation_max = -((multishot - 1) * multishot_spread_deg)
 		multishot_rotation_max /= 2
 		for m in multishot:
@@ -93,7 +86,7 @@ func handle_attacking() -> void:
 			add_sibling(instance)
 
 func apply_projectile_modifiers(projectile: Node2D) -> void:
-	projectile.attributes = modifiers.create_projectile_attributes()
+	projectile.attributes = data.modifiers_left.create_projectile_attributes()
 	if spread_deg > 0:
 		var rotation_offset = (randf() * spread_deg) - (spread_deg / 2.0)
 		projectile.rotate(deg_to_rad(rotation_offset))

@@ -24,6 +24,12 @@ func create_projectile_attributes() -> ProjectileAttributes:
 func get_modifier(index: int) -> BaseModifier:
 	return modifiers[index] if index >= 0 and index < modifiers.size() else null
 
+func find_modifier(modifier: BaseModifier) -> int:
+	for i in range(modifiers.size()):
+		if modifiers[i] == modifier:
+			return i
+	return -1
+
 func set_modifiers(new_modifiers: Array[BaseModifier]) -> void:
 	modifiers.clear()
 	bandwidth = 0
@@ -63,7 +69,14 @@ func add_modifier(modifier: BaseModifier) -> void:
 	else:
 		printerr("Unhandled modifier type: ", typeof(modifier))
 
-func remove_modifier(index: int) -> void:
+func remove_modifier(modifier: BaseModifier) -> bool:
+	var i = find_modifier(modifier)
+	if i < 0:
+		return false
+	remove_modifier_at(i)
+	return true
+
+func remove_modifier_at(index: int) -> void:
 	var removed = modifiers.pop_at(index)
 	if removed is BounceModifier:
 		bounce -= (removed as BounceModifier).bounce

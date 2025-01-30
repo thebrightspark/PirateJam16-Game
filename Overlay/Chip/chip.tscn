@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cluloih73oqn6"]
 
-[ext_resource type="Script" path="res://Overlay/chip.gd" id="1_4kbjy"]
-[ext_resource type="Script" path="res://Overlay/chip_background.gd" id="2_ub6mb"]
-[ext_resource type="LabelSettings" uid="uid://bshtoq7f6p5q" path="res://Overlay/chip_label_settings.tres" id="3_ucrny"]
+[ext_resource type="Script" path="res://Overlay/Chip/chip.gd" id="1_4kbjy"]
+[ext_resource type="Script" path="res://Overlay/Chip/chip_background.gd" id="2_ub6mb"]
+[ext_resource type="LabelSettings" uid="uid://bshtoq7f6p5q" path="res://Overlay/Chip/chip_label_settings.tres" id="3_ucrny"]
 
 [node name="Chip" type="Control"]
 layout_mode = 3
@@ -18,12 +18,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_ub6mb")
+chip_size = 8.0
 
 [node name="ChipText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 5.0
 offset_top = 4.0
-offset_right = 130.0
+offset_right = 127.0
 offset_bottom = 27.0
 text = "test"
 label_settings = ExtResource("3_ucrny")

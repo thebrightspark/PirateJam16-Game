@@ -4,10 +4,10 @@ extends CanvasLayer
 @export_group("Internal")
 @export var health_gradient: GradientTexture1D
 
-@onready var health_label: Label = $HealthValueLabel
-@onready var health_bar: ColorRect = $HealthBar
-@onready var levitate_label: Label = $LevitateValueLabel
-@onready var velocity_label: Label = $VelValueLabel
+@onready var health_label: Label = $Theme/HealthValueLabel
+@onready var health_bar: ColorRect = $Theme/HealthBar
+@onready var levitate_label: Label = $Theme/LevitateValueLabel
+@onready var velocity_label: Label = $Theme/VelValueLabel
 
 var last_health = 0
 

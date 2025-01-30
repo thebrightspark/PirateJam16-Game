@@ -1,29 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://duh72ea540n4b"]
+[gd_scene load_steps=10 format=3 uid="uid://duh72ea540n4b"]
 
 [ext_resource type="Script" path="res://Item/item_pickup.gd" id="1_jjnwe"]
 [ext_resource type="Shape2D" uid="uid://ky1io670rqfu" path="res://Item/item_pickup_shape.tres" id="1_ot5or"]
-[ext_resource type="Shader" path="res://Assets/Sprites/Modifers/Modifer_Base.gdshader" id="2_28ikr"]
-[ext_resource type="Texture2D" uid="uid://d37wi2h312oyo" path="res://Assets/Sprites/Modifers/BA_Background.png" id="3_udi8u"]
-[ext_resource type="Texture2D" uid="uid://bvki8qyn3jkq" path="res://Assets/Sprites/Modifers/BA_Border.png" id="4_v604s"]
-[ext_resource type="Texture2D" uid="uid://dxm0jw3voqequ" path="res://Assets/Sprites/Modifers/BA_Chip.png" id="5_ekfgo"]
-[ext_resource type="Texture2D" uid="uid://cko4n305b3pf6" path="res://Assets/Sprites/Modifers/BA_Circuits.png" id="5_wumwy"]
+[ext_resource type="PackedScene" uid="uid://umpc8ullrhlr" path="res://Modifier/modifier_sprite.tscn" id="2_lwa86"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oo47v"]
 bounce = 0.5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xaei2"]
-shader = ExtResource("2_28ikr")
-shader_parameter/Circuit_Color = Color(1, 1, 0, 1)
-shader_parameter/BG_Color = Color(0.685733, 3.15256e-06, 2.88785e-07, 1)
-shader_parameter/Border_Color = Color(0.537012, 0.537011, 0.537011, 1)
-shader_parameter/Chip_Color = Color(0.98275, 4.81308e-06, 1.92523e-07, 1)
-shader_parameter/Circuit_Tex = ExtResource("5_wumwy")
-shader_parameter/BG_Tex = ExtResource("3_udi8u")
-shader_parameter/Border_Tex = ExtResource("4_v604s")
-shader_parameter/Chip_Tex = ExtResource("5_ekfgo")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g7axg"]
-size = Vector2(4, 4)
 
 [sub_resource type="Gradient" id="Gradient_swwif"]
 offsets = PackedFloat32Array(0, 0.71875)
@@ -41,7 +23,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("ModifierSprite:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,7 +62,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("ModifierSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -128,10 +110,7 @@ physics_material_override = SubResource("PhysicsMaterial_oo47v")
 lock_rotation = true
 script = ExtResource("1_jjnwe")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_xaei2")
-scale = Vector2(4, 4)
-texture = SubResource("PlaceholderTexture2D_g7axg")
+[node name="ModifierSprite" parent="." instance=ExtResource("2_lwa86")]
 
 [node name="EnvironmentCollider" type="CollisionShape2D" parent="."]
 shape = ExtResource("1_ot5or")

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://bteb4ty3vk5if"]
+
+[ext_resource type="Script" path="res://Modifier/Base/base_modifier.gd" id="1_duvmy"]
+[ext_resource type="Script" path="res://Player/player_data.gd" id="1_s871x"]
+[ext_resource type="Script" path="res://Inventory/inventory.gd" id="2_jtpnp"]
+[ext_resource type="Script" path="res://Modifier/modifier_collection.gd" id="3_8dtml"]
+
+[sub_resource type="Resource" id="Resource_lg7r7"]
+script = ExtResource("2_jtpnp")
+max_size = 20
+modifiers = Array[ExtResource("1_duvmy")]([])
+
+[sub_resource type="Resource" id="Resource_e4o1i"]
+script = ExtResource("3_8dtml")
+modifiers = Array[ExtResource("1_duvmy")]([])
+
+[sub_resource type="Resource" id="Resource_epb5m"]
+script = ExtResource("3_8dtml")
+modifiers = Array[ExtResource("1_duvmy")]([])
+
+[resource]
+script = ExtResource("1_s871x")
+bandwidth = 100
+inventory = SubResource("Resource_lg7r7")
+modifiers_left = SubResource("Resource_e4o1i")
+modifiers_right = SubResource("Resource_epb5m")

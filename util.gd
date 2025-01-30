@@ -15,7 +15,7 @@ func is_in_collision_layer(body: Node, layer: String) -> bool:
 	return (body as CollisionObject2D).get_collision_layer_value(layer_id)
 
 func get_label_text_size(label: Label) -> Vector2:
-	return label.label_settings.font.get_string_size(
+	return label.get_theme_font("font").get_string_size(
 		label.text,
 		HORIZONTAL_ALIGNMENT_LEFT,
 		-1,

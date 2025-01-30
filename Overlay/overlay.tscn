@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://b3rfpyeibw7w2"]
 
 [ext_resource type="Script" path="res://Overlay/overlay.gd" id="1_a2ovv"]
+[ext_resource type="Theme" uid="uid://cmst3prls28pt" path="res://theme.tres" id="2_ytwhc"]
 [ext_resource type="LabelSettings" uid="uid://dvu487aqvh00u" path="res://Overlay/overlay_health_label_settings.tres" id="3_e61ij"]
 [ext_resource type="Material" uid="uid://pais1s00m6mt" path="res://Assets/UI/InGame/HealthBar/HealthBar_Mat.tres" id="4_7y04t"]
 [ext_resource type="LabelSettings" uid="uid://bfaraencvmagc" path="res://Overlay/overlay_label_settings.tres" id="4_egu8o"]
-[ext_resource type="PackedScene" uid="uid://dk1r4rparw0qt" path="res://Inventory/inventory_ui.tscn" id="5_qulab"]
-[ext_resource type="Resource" uid="uid://bmk47l7nirjfa" path="res://Modifier/modifier_collection.tres" id="6_2lybd"]
+[ext_resource type="PackedScene" uid="uid://dk1r4rparw0qt" path="res://Overlay/Inventory/inventory_ui.tscn" id="6_s5lx0"]
 
 [sub_resource type="Gradient" id="Gradient_bd0xy"]
 interpolation_mode = 2
@@ -32,32 +32,46 @@ shadow_offset = Vector2(1.5, 1.5)
 script = ExtResource("1_a2ovv")
 health_gradient = SubResource("GradientTexture1D_qmj6e")
 
-[node name="HealthBar" type="ColorRect" parent="."]
+[node name="Theme" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_ytwhc")
+
+[node name="HealthBar" type="ColorRect" parent="Theme"]
 texture_filter = 1
 texture_repeat = 1
 material = ExtResource("4_7y04t")
 custom_minimum_size = Vector2(95, 24)
+layout_mode = 0
 offset_left = 30.0
 offset_top = 30.0
 offset_right = 303.0
 offset_bottom = 99.0
 
-[node name="HealthValueLabel" type="Label" parent="."]
+[node name="HealthValueLabel" type="Label" parent="Theme"]
+layout_mode = 0
 offset_left = 45.0
 offset_top = 102.0
 offset_right = 115.0
 offset_bottom = 130.0
 label_settings = ExtResource("3_e61ij")
 
-[node name="LevitateValueLabel" type="Label" parent="."]
+[node name="LevitateValueLabel" type="Label" parent="Theme"]
+layout_mode = 0
 offset_left = 111.0
 offset_top = 102.0
 offset_right = 181.0
 offset_bottom = 130.0
 label_settings = SubResource("LabelSettings_rg1n3")
 
-[node name="VelLabel" type="Label" parent="."]
+[node name="VelLabel" type="Label" parent="Theme"]
 visible = false
+layout_mode = 0
 offset_left = 12.0
 offset_top = 110.0
 offset_right = 52.0
@@ -65,14 +79,15 @@ offset_bottom = 138.0
 text = "Vel:"
 label_settings = ExtResource("4_egu8o")
 
-[node name="VelValueLabel" type="Label" parent="."]
+[node name="VelValueLabel" type="Label" parent="Theme"]
 visible = false
+layout_mode = 0
 offset_left = 52.0
 offset_top = 110.0
 offset_right = 122.0
 offset_bottom = 138.0
 label_settings = SubResource("LabelSettings_83t4i")
 
-[node name="inventory_ui" parent="." instance=ExtResource("5_qulab")]
+[node name="inventory_ui" parent="Theme" instance=ExtResource("6_s5lx0")]
 visible = false
-equipped_modifiers = ExtResource("6_2lybd")
+layout_mode = 1

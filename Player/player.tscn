@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2f3nfgx1dfb8"]
 
 [ext_resource type="Script" path="res://Levels/player_controller.gd" id="1_f71sg"]
-[ext_resource type="Resource" uid="uid://c0btp4ed0mpuw" path="res://Inventory/inventory.tres" id="2_nxvoq"]
+[ext_resource type="Resource" uid="uid://bteb4ty3vk5if" path="res://Player/player_data.tres" id="2_e2er0"]
 [ext_resource type="Texture2D" uid="uid://bamis27fp54qc" path="res://Assets/player_temp.png" id="2_ykx7v"]
 [ext_resource type="Shape2D" uid="uid://cvkdexjtfy1uh" path="res://Player/player_shape.tres" id="3_1shau"]
 
@@ -48,7 +48,7 @@ emission_curve = SubResource("CurveTexture_h5y21")
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 50
 script = ExtResource("1_f71sg")
-inventory = ExtResource("2_nxvoq")
+data = ExtResource("2_e2er0")
 
 [node name="LevitateParticles" type="GPUParticles2D" parent="."]
 position = Vector2(0, 22)

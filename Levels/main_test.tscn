@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://duc4g66hghsk4"]
+[gd_scene load_steps=52 format=4 uid="uid://duc4g66hghsk4"]
 
 [ext_resource type="Script" path="res://TilemapCollisionBaker.gd" id="1_05fr6"]
 [ext_resource type="TileSet" uid="uid://un2ciuhxt1p4" path="res://Assets/TileMap/LevelTileSet_first.tres" id="1_ra72m"]
@@ -6,11 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://cjybiy86h0pf1" path="res://Assets/Sprites/Props/GodRays/GodRay_01.tscn" id="4_csujo"]
 [ext_resource type="PackedScene" uid="uid://b3rfpyeibw7w2" path="res://Overlay/overlay.tscn" id="4_kbfsw"]
 [ext_resource type="PackedScene" uid="uid://co3v7a0fdjcbk" path="res://Enemy/enemy.tscn" id="5_3ixp8"]
-[ext_resource type="Resource" uid="uid://bmk47l7nirjfa" path="res://Modifier/modifier_collection.tres" id="5_u51hp"]
+[ext_resource type="Resource" uid="uid://2tu6sh24sa6u" path="res://Modifier/Implementations/cooling_3.tres" id="7_34txr"]
+[ext_resource type="Resource" uid="uid://vugohidjje0g" path="res://Modifier/Implementations/firewall_4.tres" id="8_s6e16"]
+[ext_resource type="Resource" uid="uid://dwudq216cn1ni" path="res://Modifier/Implementations/freaker_3.tres" id="9_184qq"]
+[ext_resource type="Resource" uid="uid://cif11rytb2o23" path="res://Modifier/Implementations/persistence_3.tres" id="10_iya32"]
 [ext_resource type="PackedScene" uid="uid://duh72ea540n4b" path="res://Item/item_pickup.tscn" id="11_6gcaa"]
 [ext_resource type="PackedScene" uid="uid://cu1gxmt8xllhi" path="res://Assets/Sprites/Props/sign_01.tscn" id="11_u66b5"]
 [ext_resource type="AudioStream" uid="uid://dcefn7qj4coyp" path="res://Assets/Audio/Music/MainMenu_desert-of-our-breakup_Loop.ogg" id="11_wq451"]
+[ext_resource type="Resource" uid="uid://beeh6hlg8vn32" path="res://Modifier/Implementations/rebound_3.tres" id="11_xyadh"]
 [ext_resource type="Resource" uid="uid://dxtweujkv6o3a" path="res://Modifier/Implementations/spread_1.tres" id="12_4k3ai"]
+[ext_resource type="Resource" uid="uid://djlbkibbbr6rn" path="res://Modifier/Implementations/spread_2.tres" id="12_ibjub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb15w"]
 size = Vector2(120, 192)
@@ -288,10 +293,43 @@ position = Vector2(-456, -73)
 [node name="GodRay01" parent="StaticProps" instance=ExtResource("4_csujo")]
 position = Vector2(264, -312)
 
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-171, -65)
+modifier = ExtResource("12_4k3ai")
+
+[node name="ItemPickup2" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-192.05, -65)
+modifier = ExtResource("7_34txr")
+
+[node name="ItemPickup3" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-212.77, -65)
+modifier = ExtResource("8_s6e16")
+
+[node name="ItemPickup4" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-233.165, -65)
+modifier = ExtResource("9_184qq")
+
+[node name="ItemPickup5" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-255, -65)
+modifier = ExtResource("10_iya32")
+
+[node name="ItemPickup6" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-276.02, -65)
+modifier = ExtResource("11_xyadh")
+
+[node name="ItemPickup7" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-297.1, -65)
+modifier = ExtResource("12_ibjub")
+
+[node name="ItemPickup8" parent="Pickups" instance=ExtResource("11_6gcaa")]
+position = Vector2(-319.497, -65)
+modifier = ExtResource("12_ibjub")
+
 [node name="Player" parent="." instance=ExtResource("3_c0c7p")]
 position = Vector2(0, -65)
 jump_speed = 250.0
-modifiers = ExtResource("5_u51hp")
 levitate_max_speed = 150.0
 levitate_acceleration = 1800.0
 
@@ -306,10 +344,6 @@ position = Vector2(132, -40)
 
 [node name="Enemy3" parent="." instance=ExtResource("5_3ixp8")]
 position = Vector2(114, -40)
-
-[node name="ItemPickup" parent="." instance=ExtResource("11_6gcaa")]
-position = Vector2(-171, -65)
-modifier = ExtResource("12_4k3ai")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_wq451")
